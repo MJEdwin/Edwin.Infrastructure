@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>Edwin.Infrastructure.ORM</AssemblyName>
+    <RootNamespace>Edwin.Infrastructure.ORM</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.0.2" />
+    <PackageReference Include="System.Reflection.Emit" Version="4.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Edwin.Infrastructure.DDD\Edwin.Infrastructure.DDD.csproj" />
+    <ProjectReference Include="..\Edwin.Infrastructure.Core\Edwin.Infrastructure.Core.csproj" />
+  </ItemGroup>
+
+</Project>

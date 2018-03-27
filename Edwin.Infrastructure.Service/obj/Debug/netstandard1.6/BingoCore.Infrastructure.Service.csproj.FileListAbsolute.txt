@@ -1,0 +1,9 @@
+D:\Repos\train\BingoCore.Infrastructure.Service\bin\Debug\netstandard1.6\BingoCore.Infrastructure.Service.deps.json
+D:\Repos\train\BingoCore.Infrastructure.Service\bin\Debug\netstandard1.6\BingoCore.Infrastructure.Service.dll
+D:\Repos\train\BingoCore.Infrastructure.Service\bin\Debug\netstandard1.6\BingoCore.Infrastructure.Service.pdb
+D:\Repos\train\BingoCore.Infrastructure.Service\obj\Debug\netstandard1.6\BingoCore.Infrastructure.Service.csprojResolveAssemblyReference.cache
+D:\Repos\train\BingoCore.Infrastructure.Service\obj\Debug\netstandard1.6\BingoCore.Infrastructure.Service.csproj.CoreCompileInputs.cache
+D:\Repos\train\BingoCore.Infrastructure.Service\obj\Debug\netstandard1.6\BingoCore.Infrastructure.Service.AssemblyInfoInputs.cache
+D:\Repos\train\BingoCore.Infrastructure.Service\obj\Debug\netstandard1.6\BingoCore.Infrastructure.Service.AssemblyInfo.cs
+D:\Repos\train\BingoCore.Infrastructure.Service\obj\Debug\netstandard1.6\BingoCore.Infrastructure.Service.dll
+D:\Repos\train\BingoCore.Infrastructure.Service\obj\Debug\netstandard1.6\BingoCore.Infrastructure.Service.pdb

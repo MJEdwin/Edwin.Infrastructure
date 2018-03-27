@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>Edwin.Infrastructure.AutoMapper</AssemblyName>
+    <RootNamespace>Edwin.Infrastructure.AutoMapper</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="6.2.2" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="2.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Edwin.Infrastructure.Reflection\Edwin.Infrastructure.Reflection.csproj" />
+  </ItemGroup>
+
+</Project>

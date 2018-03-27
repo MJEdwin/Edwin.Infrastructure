@@ -1,0 +1,5 @@
+D:\Repos\train\BingoCore.Infrastructure.Core\bin\Debug\netcoreapp1.1\BingoCore.Infrastructure.Core.deps.json
+D:\Repos\train\BingoCore.Infrastructure.Core\bin\Debug\netcoreapp1.1\BingoCore.Infrastructure.Core.dll
+D:\Repos\train\BingoCore.Infrastructure.Core\obj\Debug\netcoreapp1.1\BingoCore.Infrastructure.Core.csproj.CoreCompileInputs.cache
+D:\Repos\train\BingoCore.Infrastructure.Core\obj\Debug\netcoreapp1.1\BingoCore.Infrastructure.Core.AssemblyInfoInputs.cache
+D:\Repos\train\BingoCore.Infrastructure.Core\obj\Debug\netcoreapp1.1\BingoCore.Infrastructure.Core.AssemblyInfo.cs
