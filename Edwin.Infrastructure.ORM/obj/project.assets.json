@@ -846,6 +846,7 @@
         "dependencies": {
           "Edwin.Infrastructure.Core": "1.0.0",
           "Edwin.Infrastructure.Query": "1.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "2.0.1",
           "Newtonsoft.Json": "11.0.1"
         },
         "compile": {
@@ -858,6 +859,9 @@
       "Edwin.Infrastructure.Query/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Newtonsoft.Json": "11.0.1"
+        },
         "compile": {
           "bin/placeholder/Edwin.Infrastructure.Query.dll": {}
         },
@@ -2953,7 +2957,7 @@
       ]
     },
     "System.Runtime.CompilerServices.Unsafe/4.4.0": {
-      "sha512": "9dLLuBxr5GNmOfl2jSMcsHuteEg32BEfUotmmUkmZjpR3RpVHE8YQwt0ow3p6prwA1ME8WqDVZqrr8z6H8G+Kw==",
+      "sha512": "Lb7wBPg/cqgd81cXF7IOG97p/1+rGALORDlbB453tPvFVES5d7L81OkvdhSrZv0ndxIWnv00fuLpML2HGn+yrQ==",
       "type": "package",
       "path": "system.runtime.compilerservices.unsafe/4.4.0",
       "files": [
@@ -3574,15 +3578,12 @@
   },
   "project": {
     "version": "1.0.0",
-    "restoreSettings": {
-      "hideWarningsAndErrors": true
-    },
     "restore": {
-      "projectUniqueName": "D:\\Repos\\NetSwagger\\Edwin.Infrastructure\\Edwin.Infrastructure.ORM\\Edwin.Infrastructure.ORM.csproj",
+      "projectUniqueName": "D:\\Repos\\git\\Edwin.Infrastructure\\Edwin.Infrastructure.ORM\\Edwin.Infrastructure.ORM.csproj",
       "projectName": "Edwin.Infrastructure.ORM",
-      "projectPath": "D:\\Repos\\NetSwagger\\Edwin.Infrastructure\\Edwin.Infrastructure.ORM\\Edwin.Infrastructure.ORM.csproj",
+      "projectPath": "D:\\Repos\\git\\Edwin.Infrastructure\\Edwin.Infrastructure.ORM\\Edwin.Infrastructure.ORM.csproj",
       "packagesPath": "C:\\Users\\jm\\.nuget\\packages\\",
-      "outputPath": "D:\\Repos\\NetSwagger\\Edwin.Infrastructure\\Edwin.Infrastructure.ORM\\obj\\",
+      "outputPath": "D:\\Repos\\git\\Edwin.Infrastructure\\Edwin.Infrastructure.ORM\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -3596,18 +3597,17 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "D:\\Repos\\NetSwagger\\nuget": {},
-        "D:\\Repos\\manage\\local nupkg": {},
+        "http://118.193.159.235:8080/": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netstandard2.0": {
           "projectReferences": {
-            "D:\\Repos\\NetSwagger\\Edwin.Infrastructure\\Edwin.Infrastructure.DDD\\Edwin.Infrastructure.DDD.csproj": {
-              "projectPath": "D:\\Repos\\NetSwagger\\Edwin.Infrastructure\\Edwin.Infrastructure.DDD\\Edwin.Infrastructure.DDD.csproj"
+            "D:\\Repos\\git\\Edwin.Infrastructure\\Edwin.Infrastructure.Core\\Edwin.Infrastructure.Core.csproj": {
+              "projectPath": "D:\\Repos\\git\\Edwin.Infrastructure\\Edwin.Infrastructure.Core\\Edwin.Infrastructure.Core.csproj"
             },
-            "D:\\Repos\\NetSwagger\\Edwin.Infrastructure\\Edwin.Infrastructure.Core\\Edwin.Infrastructure.Core.csproj": {
-              "projectPath": "D:\\Repos\\NetSwagger\\Edwin.Infrastructure\\Edwin.Infrastructure.Core\\Edwin.Infrastructure.Core.csproj"
+            "D:\\Repos\\git\\Edwin.Infrastructure\\Edwin.Infrastructure.DDD\\Edwin.Infrastructure.DDD.csproj": {
+              "projectPath": "D:\\Repos\\git\\Edwin.Infrastructure\\Edwin.Infrastructure.DDD\\Edwin.Infrastructure.DDD.csproj"
             }
           }
         }

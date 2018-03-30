@@ -14,19 +14,18 @@ namespace Edwin.Infrastructure.ORM.EntityFramework
         where TContext : DbContext
     {
         private TContext _context;
-        private IQueryable<TEntity> _store;
+        private DbSet<TEntity> _store => _context.Set<TEntity>();
 
         public EntityFrameworkRepository(TContext context)
         {
             _context = context;
-            _store = _context.Set<TEntity>();
         }
 
         #region Early Load
-        public IRepository<TEntity, TPrimaryKey> Load(Expression<Func<TEntity, object>> loadProp)
+        public IQueryable<TEntity> Load(Expression<Func<TEntity, object>> loadProp)
         {
-            _store = _store.Include(loadProp);
-            return this;
+            var query = _store.Include(loadProp);
+            return query;
         }
         #endregion
 
@@ -56,6 +55,9 @@ namespace Edwin.Infrastructure.ORM.EntityFramework
 
         public long LongCount(Expression<Func<TEntity, bool>> where = null) => _store.LongCount(where);
 
+        public bool Exist(TEntity entity) => _store.Any(s => s == entity);
+
+        public bool Exist(Expression<Func<TEntity, bool>> where) => _store.Any(where);
         #endregion
 
         #region Insert
@@ -111,39 +113,5 @@ namespace Edwin.Infrastructure.ORM.EntityFramework
             _context.SaveChanges();
         }
         #endregion
-        protected virtual void AttachIfNot(TEntity entity)
-        {
-            var entry = _context.ChangeTracker.Entries().FirstOrDefault(ent => ent.Entity == entity);
-            if (entry != null)
-            {
-                return;
-            }
-
-            _context.Attach(entity);
-        }
-
-        private TEntity GetFromChangeTrackerOrNull(TPrimaryKey id)
-        {
-            var entry = _context.ChangeTracker.Entries()
-                .FirstOrDefault(
-                    ent =>
-                        ent.Entity is TEntity &&
-                        EqualityComparer<TPrimaryKey>.Default.Equals(id, (ent.Entity as TEntity).Id)
-                );
-
-            return entry?.Entity as TEntity;
-        }
-
-        protected static Expression<Func<TEntity, bool>> CreateEqualityExpressionForId(TPrimaryKey id)
-        {
-            var lambdaParam = Expression.Parameter(typeof(TEntity));
-
-            var lambdaBody = Expression.Equal(
-                Expression.PropertyOrField(lambdaParam, "Id"),
-                Expression.Constant(id, typeof(TPrimaryKey))
-                );
-
-            return Expression.Lambda<Func<TEntity, bool>>(lambdaBody, lambdaParam);
-        }
     }
 }

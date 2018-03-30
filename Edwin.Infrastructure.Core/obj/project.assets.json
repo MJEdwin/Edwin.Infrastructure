@@ -2505,7 +2505,7 @@
       ]
     },
     "System.Runtime.CompilerServices.Unsafe/4.4.0": {
-      "sha512": "9dLLuBxr5GNmOfl2jSMcsHuteEg32BEfUotmmUkmZjpR3RpVHE8YQwt0ow3p6prwA1ME8WqDVZqrr8z6H8G+Kw==",
+      "sha512": "Lb7wBPg/cqgd81cXF7IOG97p/1+rGALORDlbB453tPvFVES5d7L81OkvdhSrZv0ndxIWnv00fuLpML2HGn+yrQ==",
       "type": "package",
       "path": "system.runtime.compilerservices.unsafe/4.4.0",
       "files": [
@@ -3111,15 +3111,12 @@
   },
   "project": {
     "version": "1.0.0",
-    "restoreSettings": {
-      "hideWarningsAndErrors": true
-    },
     "restore": {
-      "projectUniqueName": "D:\\Repos\\NetSwagger\\Edwin.Infrastructure\\Edwin.Infrastructure.Core\\Edwin.Infrastructure.Core.csproj",
+      "projectUniqueName": "D:\\Repos\\git\\Edwin.Infrastructure\\Edwin.Infrastructure.Core\\Edwin.Infrastructure.Core.csproj",
       "projectName": "Edwin.Infrastructure.Core",
-      "projectPath": "D:\\Repos\\NetSwagger\\Edwin.Infrastructure\\Edwin.Infrastructure.Core\\Edwin.Infrastructure.Core.csproj",
+      "projectPath": "D:\\Repos\\git\\Edwin.Infrastructure\\Edwin.Infrastructure.Core\\Edwin.Infrastructure.Core.csproj",
       "packagesPath": "C:\\Users\\jm\\.nuget\\packages\\",
-      "outputPath": "D:\\Repos\\NetSwagger\\Edwin.Infrastructure\\Edwin.Infrastructure.Core\\obj\\",
+      "outputPath": "D:\\Repos\\git\\Edwin.Infrastructure\\Edwin.Infrastructure.Core\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -3133,15 +3130,14 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "D:\\Repos\\NetSwagger\\nuget": {},
-        "D:\\Repos\\manage\\local nupkg": {},
+        "http://118.193.159.235:8080/": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netstandard2.0": {
           "projectReferences": {
-            "D:\\Repos\\NetSwagger\\Edwin.Infrastructure\\Edwin.Infrastructure.AutoMapper\\Edwin.Infrastructure.AutoMapper.csproj": {
-              "projectPath": "D:\\Repos\\NetSwagger\\Edwin.Infrastructure\\Edwin.Infrastructure.AutoMapper\\Edwin.Infrastructure.AutoMapper.csproj"
+            "D:\\Repos\\git\\Edwin.Infrastructure\\Edwin.Infrastructure.AutoMapper\\Edwin.Infrastructure.AutoMapper.csproj": {
+              "projectPath": "D:\\Repos\\git\\Edwin.Infrastructure\\Edwin.Infrastructure.AutoMapper\\Edwin.Infrastructure.AutoMapper.csproj"
             }
           }
         }

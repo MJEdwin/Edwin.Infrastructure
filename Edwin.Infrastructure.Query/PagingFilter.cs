@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
@@ -21,5 +22,12 @@ namespace Edwin.Infrastructure.Query
         {
             return queryable.Skip((PageNumber - 1) * PageSize).Take(PageSize);
         }
+
+        public static explicit operator PagingFilter<TEntity>(JObject jObject)
+            => new PagingFilter<TEntity>
+            {
+                PageSize = jObject["pageSize"].Value<int>(),
+                PageNumber = jObject["pageNumber"].Value<int>()
+            };
     }
 }

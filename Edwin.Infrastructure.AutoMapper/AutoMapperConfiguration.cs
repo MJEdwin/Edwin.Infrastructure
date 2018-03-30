@@ -30,9 +30,16 @@ namespace Edwin.Infrastructure.AutoMapper
             });
         }
 
+        /// <summary>
+        /// 获取映射对象
+        /// </summary>
+        /// <returns></returns>
         public IMapper GetMapper()
             => _instance.CreateMapper();
 
+        /// <summary>
+        /// AutoMapper静态初始化
+        /// </summary>
         public static AutoMapperConfiguration Instance { get; } = new AutoMapperConfiguration(AssemblyFinder.GetCustomerAssemblies().Select(a => a.FullName).ToArray());
     }
 }

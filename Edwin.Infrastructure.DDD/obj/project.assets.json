@@ -72,6 +72,15 @@
           "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {}
         }
       },
+      "Microsoft.Extensions.Logging.Abstractions/2.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Microsoft.Extensions.Logging.Abstractions.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Extensions.Logging.Abstractions.dll": {}
+        }
+      },
       "Microsoft.Extensions.Primitives/2.0.0": {
         "type": "package",
         "dependencies": {
@@ -680,6 +689,9 @@
       "Edwin.Infrastructure.Query/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Newtonsoft.Json": "11.0.1"
+        },
         "compile": {
           "bin/placeholder/Edwin.Infrastructure.Query.dll": {}
         },
@@ -794,6 +806,17 @@
         "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.Abstractions.xml",
         "microsoft.extensions.dependencyinjection.abstractions.2.0.0.nupkg.sha512",
         "microsoft.extensions.dependencyinjection.abstractions.nuspec"
+      ]
+    },
+    "Microsoft.Extensions.Logging.Abstractions/2.0.1": {
+      "sha512": "DzCKlMdXOysXFDBXgNnxFlpSj5AOdMkUqKEjKT1n+japTxhQ3e3MaGODZGtbIj9ezykRs9oEBGmdSHHfh4oNVA==",
+      "type": "package",
+      "path": "microsoft.extensions.logging.abstractions/2.0.1",
+      "files": [
+        "lib/netstandard2.0/Microsoft.Extensions.Logging.Abstractions.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.Logging.Abstractions.xml",
+        "microsoft.extensions.logging.abstractions.2.0.1.nupkg.sha512",
+        "microsoft.extensions.logging.abstractions.nuspec"
       ]
     },
     "Microsoft.Extensions.Primitives/2.0.0": {
@@ -2531,7 +2554,7 @@
       ]
     },
     "System.Runtime.CompilerServices.Unsafe/4.4.0": {
-      "sha512": "9dLLuBxr5GNmOfl2jSMcsHuteEg32BEfUotmmUkmZjpR3RpVHE8YQwt0ow3p6prwA1ME8WqDVZqrr8z6H8G+Kw==",
+      "sha512": "Lb7wBPg/cqgd81cXF7IOG97p/1+rGALORDlbB453tPvFVES5d7L81OkvdhSrZv0ndxIWnv00fuLpML2HGn+yrQ==",
       "type": "package",
       "path": "system.runtime.compilerservices.unsafe/4.4.0",
       "files": [
@@ -3136,6 +3159,7 @@
     ".NETStandard,Version=v2.0": [
       "Edwin.Infrastructure.Core >= 1.0.0",
       "Edwin.Infrastructure.Query >= 1.0.0",
+      "Microsoft.Extensions.Logging.Abstractions >= 2.0.1",
       "NETStandard.Library >= 2.0.1",
       "Newtonsoft.Json >= 11.0.1"
     ]
@@ -3146,15 +3170,12 @@
   },
   "project": {
     "version": "1.0.0",
-    "restoreSettings": {
-      "hideWarningsAndErrors": true
-    },
     "restore": {
-      "projectUniqueName": "D:\\Repos\\NetSwagger\\Edwin.Infrastructure\\Edwin.Infrastructure.DDD\\Edwin.Infrastructure.DDD.csproj",
+      "projectUniqueName": "D:\\Repos\\git\\Edwin.Infrastructure\\Edwin.Infrastructure.DDD\\Edwin.Infrastructure.DDD.csproj",
       "projectName": "Edwin.Infrastructure.DDD",
-      "projectPath": "D:\\Repos\\NetSwagger\\Edwin.Infrastructure\\Edwin.Infrastructure.DDD\\Edwin.Infrastructure.DDD.csproj",
+      "projectPath": "D:\\Repos\\git\\Edwin.Infrastructure\\Edwin.Infrastructure.DDD\\Edwin.Infrastructure.DDD.csproj",
       "packagesPath": "C:\\Users\\jm\\.nuget\\packages\\",
-      "outputPath": "D:\\Repos\\NetSwagger\\Edwin.Infrastructure\\Edwin.Infrastructure.DDD\\obj\\",
+      "outputPath": "D:\\Repos\\git\\Edwin.Infrastructure\\Edwin.Infrastructure.DDD\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -3168,18 +3189,17 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "D:\\Repos\\NetSwagger\\nuget": {},
-        "D:\\Repos\\manage\\local nupkg": {},
+        "http://118.193.159.235:8080/": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netstandard2.0": {
           "projectReferences": {
-            "D:\\Repos\\NetSwagger\\Edwin.Infrastructure\\Edwin.Infrastructure.Core\\Edwin.Infrastructure.Core.csproj": {
-              "projectPath": "D:\\Repos\\NetSwagger\\Edwin.Infrastructure\\Edwin.Infrastructure.Core\\Edwin.Infrastructure.Core.csproj"
+            "D:\\Repos\\git\\Edwin.Infrastructure\\Edwin.Infrastructure.Core\\Edwin.Infrastructure.Core.csproj": {
+              "projectPath": "D:\\Repos\\git\\Edwin.Infrastructure\\Edwin.Infrastructure.Core\\Edwin.Infrastructure.Core.csproj"
             },
-            "D:\\Repos\\NetSwagger\\Edwin.Infrastructure\\Edwin.Infrastructure.Query\\Edwin.Infrastructure.Query.csproj": {
-              "projectPath": "D:\\Repos\\NetSwagger\\Edwin.Infrastructure\\Edwin.Infrastructure.Query\\Edwin.Infrastructure.Query.csproj"
+            "D:\\Repos\\git\\Edwin.Infrastructure\\Edwin.Infrastructure.Query\\Edwin.Infrastructure.Query.csproj": {
+              "projectPath": "D:\\Repos\\git\\Edwin.Infrastructure\\Edwin.Infrastructure.Query\\Edwin.Infrastructure.Query.csproj"
             }
           }
         }
@@ -3193,6 +3213,10 @@
     "frameworks": {
       "netstandard2.0": {
         "dependencies": {
+          "Microsoft.Extensions.Logging.Abstractions": {
+            "target": "Package",
+            "version": "[2.0.1, )"
+          },
           "NETStandard.Library": {
             "suppressParent": "All",
             "target": "Package",

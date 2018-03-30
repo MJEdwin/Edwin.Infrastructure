@@ -2,8 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
-    <AssemblyName>BingoCore.Infrastructure.TagHelpers</AssemblyName>
-    <RootNamespace>BingoCore.Infrastructure.TagHelpers</RootNamespace>
+    <AssemblyName>Edwin.Infrastructure.TagHelpers</AssemblyName>
+    <RootNamespace>Edwin.Infrastructure.TagHelpers</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

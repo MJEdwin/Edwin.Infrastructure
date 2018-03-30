@@ -4351,7 +4351,7 @@
       ]
     },
     "System.Runtime.CompilerServices.Unsafe/4.4.0": {
-      "sha512": "9dLLuBxr5GNmOfl2jSMcsHuteEg32BEfUotmmUkmZjpR3RpVHE8YQwt0ow3p6prwA1ME8WqDVZqrr8z6H8G+Kw==",
+      "sha512": "Lb7wBPg/cqgd81cXF7IOG97p/1+rGALORDlbB453tPvFVES5d7L81OkvdhSrZv0ndxIWnv00fuLpML2HGn+yrQ==",
       "type": "package",
       "path": "system.runtime.compilerservices.unsafe/4.4.0",
       "files": [
@@ -5427,15 +5427,12 @@
   },
   "project": {
     "version": "1.0.0",
-    "restoreSettings": {
-      "hideWarningsAndErrors": true
-    },
     "restore": {
-      "projectUniqueName": "D:\\Repos\\Edwin\\Edwin.Infrastructure\\Edwin.Infrastructure.TagHelpers\\BingoCore.Infrastructure.TagHelpers.csproj",
-      "projectName": "BingoCore.Infrastructure.TagHelpers",
-      "projectPath": "D:\\Repos\\Edwin\\Edwin.Infrastructure\\Edwin.Infrastructure.TagHelpers\\BingoCore.Infrastructure.TagHelpers.csproj",
+      "projectUniqueName": "D:\\Repos\\git\\Edwin.Infrastructure\\Edwin.Infrastructure.TagHelpers\\Edwin.Infrastructure.TagHelpers.csproj",
+      "projectName": "Edwin.Infrastructure.TagHelpers",
+      "projectPath": "D:\\Repos\\git\\Edwin.Infrastructure\\Edwin.Infrastructure.TagHelpers\\Edwin.Infrastructure.TagHelpers.csproj",
       "packagesPath": "C:\\Users\\jm\\.nuget\\packages\\",
-      "outputPath": "D:\\Repos\\Edwin\\Edwin.Infrastructure\\Edwin.Infrastructure.TagHelpers\\obj\\",
+      "outputPath": "D:\\Repos\\git\\Edwin.Infrastructure\\Edwin.Infrastructure.TagHelpers\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -5449,8 +5446,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "D:\\Repos\\NetSwagger\\nuget": {},
-        "D:\\Repos\\manage\\local nupkg": {},
+        "http://118.193.159.235:8080/": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

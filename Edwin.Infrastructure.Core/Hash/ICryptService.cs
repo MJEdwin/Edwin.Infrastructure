@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Edwin.Infrastructure.Core.Hash
+namespace Edwin.Infrastructure.Hash
 {
     public interface ICryptService
     {

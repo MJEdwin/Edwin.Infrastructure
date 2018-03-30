@@ -1,6 +1,6 @@
 ﻿using Edwin.Infrastructure.AutoMapper;
 using Edwin.Infrastructure.Query;
-using Edwin.Infrastructure.Core.Serializer;
+using Edwin.Infrastructure.Serializer;
 using Edwin.Infrastructure.DDD.UnitOfWork;
 using Edwin.Infrastructure.DDD.Domian;
 using Edwin.Infrastructure.DDD.Repositories;
@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Microsoft.Extensions.Logging;
 
 namespace Edwin.Infrastructure.DDD.Application
 {
@@ -17,11 +18,13 @@ namespace Edwin.Infrastructure.DDD.Application
     {
         protected IRepository<TEntity, TPrimaryKey> _repository;
         protected IUnitOfWorkManager _manager;
+        protected ILogger<ApplicationServiceBase<TEntity, TPrimaryKey>> _logger;
 
-        public ApplicationServiceBase(IRepository<TEntity, TPrimaryKey> repository, IUnitOfWorkManager manager)
+        public ApplicationServiceBase(IRepository<TEntity, TPrimaryKey> repository, IUnitOfWorkManager manager, ILogger<ApplicationServiceBase<TEntity, TPrimaryKey>> logger)
         {
             _repository = repository;
             _manager = manager;
+            _logger = logger;
         }
 
         #region Query
@@ -39,7 +42,7 @@ namespace Edwin.Infrastructure.DDD.Application
         }
 
         public bool Exist(TPrimaryKey id)
-            => _repository.FindOrDefaultById(id) != null;
+            => _repository.Exist(entity => entity.Id.Equals(id));
 
         public TEntity GetById(TPrimaryKey id)
             => _repository.FindById(id);
@@ -54,11 +57,13 @@ namespace Edwin.Infrastructure.DDD.Application
                 {
                     var entity = dto.MapTo<TDTO, TEntity>();
                     _repository.Insert(entity);
+                    unitOfWork.Complete();
                     return entity;
                 }
             }
             catch (Exception e)
             {
+                _logger.LogError(e, $"Action {nameof(this.Create)} Error");
                 throw e;
             }
 
@@ -66,47 +71,85 @@ namespace Edwin.Infrastructure.DDD.Application
 
         public TEntity Create(Dictionary<string, object> dictionary)
         {
-            using (var unitOfWork = _manager.Begin())
+            try
             {
-                var entity = new DictionarySerializer<TEntity>(CompareWay.ToLower)
-                    .Deserialize(dictionary);
-                _repository.Insert(entity);
-                return entity;
+                using (var unitOfWork = _manager.Begin())
+                {
+                    var entity = new DictionarySerializer<TEntity>(CompareWay.ToLower)
+                        .Deserialize(dictionary);
+                    _repository.Insert(entity);
+                    unitOfWork.Complete();
+                    return entity;
+                }
             }
+            catch (Exception e)
+            {
+                _logger.LogError(e, $"Action {nameof(this.Create)} Error");
+                throw e;
+            }
+
         }
 
         public TEntity Upgrade<TDTO>(TPrimaryKey id, TDTO dto)
         {
-            using (var unitOfWork = _manager.Begin())
+            try
             {
-                var entity = GetById(id);
-                _repository.Update(dto.MapTo(entity));
-                return entity;
+                using (var unitOfWork = _manager.Begin())
+                {
+                    var entity = GetById(id);
+                    _repository.Update(dto.MapTo(entity));
+                    unitOfWork.Complete();
+                    return entity;
+                }
             }
+            catch (Exception e)
+            {
+                _logger.LogError(e, $"Action {nameof(this.Upgrade)} Error");
+                throw e;
+            }
+
         }
 
         public TEntity Upgrade(TPrimaryKey id, Dictionary<string, object> dictionary)
         {
-            using (var unitOfWork = _manager.Begin())
+            try
             {
-                var entity = GetById(id);
-                entity.Update(dictionary);
-                _repository.Update(entity);
-                return entity;
+                using (var unitOfWork = _manager.Begin())
+                {
+                    var entity = GetById(id);
+                    entity.Update(dictionary);
+                    _repository.Update(entity);
+                    unitOfWork.Complete();
+                    return entity;
+                }
+            }
+            catch (Exception e)
+            {
+                _logger.LogError(e, $"Action {nameof(this.Upgrade)} Error");
+                throw e;
             }
 
         }
 
         public void Delete(params TPrimaryKey[] id)
         {
-            using (var unitOfWork = _manager.Begin())
+            try
             {
-                foreach (var key in id)
+                using (var unitOfWork = _manager.Begin())
                 {
-                    _repository.DeleteById(key);
+                    foreach (var key in id)
+                    {
+                        _repository.DeleteById(key);
+
+                    }
+                    unitOfWork.Complete();
                 }
             }
-
+            catch (Exception e)
+            {
+                _logger.LogError(e, $"Action {nameof(this.Delete)} Error");
+                throw e;
+            }
         }
         #endregion
     }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Edwin.Infrastructure.Core.Serializer
+namespace Edwin.Infrastructure.Serializer
 {
     public class DictionarySerializer<TData> : ISerializer<TData, Dictionary<string, object>>
     {

@@ -1,0 +1,22 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace Edwin.Infrastructure.DDD.Event
+{
+    public interface IEventData
+    {
+        /// <summary>
+        /// 事件触发事件
+        /// </summary>
+        DateTime EventTime { get; set; }
+        /// <summary>
+        /// 事件发生
+        /// </summary>
+        object EventSource { get; set; }
+        /// <summary>
+        /// 是否阻止向子类传递
+        /// </summary>
+        bool DisableBubbling { get; set; }
+    }
+}

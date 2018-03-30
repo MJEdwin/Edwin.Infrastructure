@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
@@ -58,6 +59,13 @@ namespace Edwin.Infrastructure.Query
                 }
             }
         }
+
+        public static explicit operator OrderFilter<TEntity>(JProperty jProperty)
+            => new OrderFilter<TEntity>
+            {
+                PropName = jProperty.Name,
+                Type = jProperty.Value.Value<string>() == "desc" ? OrderType.Desc : OrderType.Esc
+            };
     }
 
     public enum OrderType

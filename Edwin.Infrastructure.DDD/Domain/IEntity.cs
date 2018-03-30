@@ -4,7 +4,12 @@ using System.Text;
 
 namespace Edwin.Infrastructure.DDD.Domian
 {
-    public interface IEntity<TPrimaryKey>
+    public interface IEntity
+    {
+
+    }
+
+    public interface IEntity<TPrimaryKey> : IEntity
     {
         TPrimaryKey Id { get; set; }
     }

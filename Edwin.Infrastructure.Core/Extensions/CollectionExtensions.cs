@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Edwin.Infrastructure.Core.Extensions
+namespace Edwin.Infrastructure.Extensions
 {
     /// <summary>
     /// Extension methods for Collections.

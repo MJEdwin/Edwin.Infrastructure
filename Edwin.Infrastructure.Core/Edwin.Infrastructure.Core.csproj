@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <AssemblyName>Edwin.Infrastructure.Core</AssemblyName>
-    <RootNamespace>Edwin.Infrastructure.Core</RootNamespace>
+    <RootNamespace>Edwin.Infrastructure</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

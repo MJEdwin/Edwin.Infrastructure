@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Text;
@@ -64,6 +65,23 @@ namespace Edwin.Infrastructure.Query
         private Expression GetProp(Expression<Func<TEntity, object>> prop)
         {
             return prop.Body;
+        }
+
+        public static explicit operator BaseTypeQueryFilter<TEntity>(JObject jObject)
+        {
+            Operator @operator;
+            switch (jObject["opt"].Value<string>())
+            {
+                case "!=": @operator = Operator.NotEqual; break;
+                case "==": @operator = Operator.Equal; break;
+                case "<": @operator = Operator.LessThan; break;
+                case "<=": @operator = Operator.LessThanEqual; break;
+                case ">": @operator = Operator.MoreThan; break;
+                case ">=": @operator = Operator.MoreThanEqual; break;
+                default:
+                    throw new ArgumentException("操作符表示错误");
+            }
+            return new BaseTypeQueryFilter<TEntity>(jObject["prop"].Value<string>(), @operator, jObject["value"].Value<object>());
         }
     }
 

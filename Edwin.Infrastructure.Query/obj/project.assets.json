@@ -25,6 +25,15 @@
         "build": {
           "build/netstandard2.0/NETStandard.Library.targets": {}
         }
+      },
+      "Newtonsoft.Json/11.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        }
       }
     }
   },
@@ -169,11 +178,40 @@
         "netstandard.library.2.0.1.nupkg.sha512",
         "netstandard.library.nuspec"
       ]
+    },
+    "Newtonsoft.Json/11.0.1": {
+      "sha512": "pNN4l+J6LlpIvHOeNdXlwxv39NPJ2B5klz+Rd2UQZIx30Squ5oND1Yy3wEAUoKn0GPUj6Yxt9lxlYWQqfZcvKg==",
+      "type": "package",
+      "path": "newtonsoft.json/11.0.1",
+      "files": [
+        "LICENSE.md",
+        "lib/net20/Newtonsoft.Json.dll",
+        "lib/net20/Newtonsoft.Json.xml",
+        "lib/net35/Newtonsoft.Json.dll",
+        "lib/net35/Newtonsoft.Json.xml",
+        "lib/net40/Newtonsoft.Json.dll",
+        "lib/net40/Newtonsoft.Json.xml",
+        "lib/net45/Newtonsoft.Json.dll",
+        "lib/net45/Newtonsoft.Json.xml",
+        "lib/netstandard1.0/Newtonsoft.Json.dll",
+        "lib/netstandard1.0/Newtonsoft.Json.xml",
+        "lib/netstandard1.3/Newtonsoft.Json.dll",
+        "lib/netstandard1.3/Newtonsoft.Json.xml",
+        "lib/netstandard2.0/Newtonsoft.Json.dll",
+        "lib/netstandard2.0/Newtonsoft.Json.xml",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.dll",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.xml",
+        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.dll",
+        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.xml",
+        "newtonsoft.json.11.0.1.nupkg.sha512",
+        "newtonsoft.json.nuspec"
+      ]
     }
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
-      "NETStandard.Library >= 2.0.1"
+      "NETStandard.Library >= 2.0.1",
+      "Newtonsoft.Json >= 11.0.1"
     ]
   },
   "packageFolders": {
@@ -182,15 +220,12 @@
   },
   "project": {
     "version": "1.0.0",
-    "restoreSettings": {
-      "hideWarningsAndErrors": true
-    },
     "restore": {
-      "projectUniqueName": "D:\\Repos\\NetSwagger\\Edwin.Infrastructure\\Edwin.Infrastructure.Query\\Edwin.Infrastructure.Query.csproj",
+      "projectUniqueName": "D:\\Repos\\git\\Edwin.Infrastructure\\Edwin.Infrastructure.Query\\Edwin.Infrastructure.Query.csproj",
       "projectName": "Edwin.Infrastructure.Query",
-      "projectPath": "D:\\Repos\\NetSwagger\\Edwin.Infrastructure\\Edwin.Infrastructure.Query\\Edwin.Infrastructure.Query.csproj",
+      "projectPath": "D:\\Repos\\git\\Edwin.Infrastructure\\Edwin.Infrastructure.Query\\Edwin.Infrastructure.Query.csproj",
       "packagesPath": "C:\\Users\\jm\\.nuget\\packages\\",
-      "outputPath": "D:\\Repos\\NetSwagger\\Edwin.Infrastructure\\Edwin.Infrastructure.Query\\obj\\",
+      "outputPath": "D:\\Repos\\git\\Edwin.Infrastructure\\Edwin.Infrastructure.Query\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -204,8 +239,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "D:\\Repos\\NetSwagger\\nuget": {},
-        "D:\\Repos\\manage\\local nupkg": {},
+        "http://118.193.159.235:8080/": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -227,6 +261,10 @@
             "target": "Package",
             "version": "[2.0.1, )",
             "autoReferenced": true
+          },
+          "Newtonsoft.Json": {
+            "target": "Package",
+            "version": "[11.0.1, )"
           }
         },
         "imports": [

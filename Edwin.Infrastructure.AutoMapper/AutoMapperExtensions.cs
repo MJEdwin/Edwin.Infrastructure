@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using AutoMapper.QueryableExtensions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +16,7 @@ namespace Edwin.Infrastructure.AutoMapper
             => Sourse.Select(sourse => sourse.MapTo<TSourse, TDes>());
 
         public static IQueryable<TDes> MapTo<TSourse, TDes>(this IQueryable<TSourse> Sourse)
-            => Sourse.Select(sourse => sourse.MapTo<TSourse, TDes>());
+            => Sourse.ProjectTo<TDes>(_mapper.ConfigurationProvider);
 
         public static TDes MapTo<TSourse, TDes>(this TSourse Sourse)
             => _mapper.Map<TSourse, TDes>(Sourse);

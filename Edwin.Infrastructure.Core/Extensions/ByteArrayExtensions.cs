@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Edwin.Infrastructure.Core.Extensions
+namespace Edwin.Infrastructure.Extensions
 {
     public static class ByteArrayExtensions
     {

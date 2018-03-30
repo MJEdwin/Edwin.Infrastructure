@@ -1,10 +1,10 @@
-﻿using Edwin.Infrastructure.Core.Extensions;
+﻿using Edwin.Infrastructure.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace Edwin.Infrastructure.Core.Hash
+namespace Edwin.Infrastructure.Hash
 {
     public class MD5CryptService : ICryptService
     {

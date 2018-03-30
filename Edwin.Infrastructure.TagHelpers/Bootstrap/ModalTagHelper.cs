@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BingoCore.Infrastructure.TagHelpers.Bootstrap
+namespace Edwin.Infrastructure.TagHelpers.Bootstrap
 {
     [HtmlTargetElement("bg:modal", TagStructure = TagStructure.NormalOrSelfClosing)]
     public class ModalTagHelper : TagHelper

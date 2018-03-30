@@ -2977,15 +2977,12 @@
   },
   "project": {
     "version": "1.0.0",
-    "restoreSettings": {
-      "hideWarningsAndErrors": true
-    },
     "restore": {
-      "projectUniqueName": "D:\\Repos\\NetSwagger\\Edwin.Infrastructure\\Edwin.Infrastructure.AutoMapper\\Edwin.Infrastructure.AutoMapper.csproj",
+      "projectUniqueName": "D:\\Repos\\git\\Edwin.Infrastructure\\Edwin.Infrastructure.AutoMapper\\Edwin.Infrastructure.AutoMapper.csproj",
       "projectName": "Edwin.Infrastructure.AutoMapper",
-      "projectPath": "D:\\Repos\\NetSwagger\\Edwin.Infrastructure\\Edwin.Infrastructure.AutoMapper\\Edwin.Infrastructure.AutoMapper.csproj",
+      "projectPath": "D:\\Repos\\git\\Edwin.Infrastructure\\Edwin.Infrastructure.AutoMapper\\Edwin.Infrastructure.AutoMapper.csproj",
       "packagesPath": "C:\\Users\\jm\\.nuget\\packages\\",
-      "outputPath": "D:\\Repos\\NetSwagger\\Edwin.Infrastructure\\Edwin.Infrastructure.AutoMapper\\obj\\",
+      "outputPath": "D:\\Repos\\git\\Edwin.Infrastructure\\Edwin.Infrastructure.AutoMapper\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -2999,15 +2996,14 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "D:\\Repos\\NetSwagger\\nuget": {},
-        "D:\\Repos\\manage\\local nupkg": {},
+        "http://118.193.159.235:8080/": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netstandard2.0": {
           "projectReferences": {
-            "D:\\Repos\\NetSwagger\\Edwin.Infrastructure\\Edwin.Infrastructure.Reflection\\Edwin.Infrastructure.Reflection.csproj": {
-              "projectPath": "D:\\Repos\\NetSwagger\\Edwin.Infrastructure\\Edwin.Infrastructure.Reflection\\Edwin.Infrastructure.Reflection.csproj"
+            "D:\\Repos\\git\\Edwin.Infrastructure\\Edwin.Infrastructure.Reflection\\Edwin.Infrastructure.Reflection.csproj": {
+              "projectPath": "D:\\Repos\\git\\Edwin.Infrastructure\\Edwin.Infrastructure.Reflection\\Edwin.Infrastructure.Reflection.csproj"
             }
           }
         }

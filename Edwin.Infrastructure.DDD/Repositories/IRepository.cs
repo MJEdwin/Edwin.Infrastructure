@@ -16,7 +16,7 @@ namespace Edwin.Infrastructure.DDD.Repositories
         /// </summary>
         /// <param name="loadProp">加载关系数据</param>
         /// <returns>返回仓储</returns>
-        IRepository<TEntity, TPrimaryKey> Load(Expression<Func<TEntity, object>> loadProp);
+        IQueryable<TEntity> Load(Expression<Func<TEntity, object>> loadProp);
         #endregion
 
         #region Query
@@ -79,6 +79,18 @@ namespace Edwin.Infrastructure.DDD.Repositories
         /// <param name="where">条件lambda</param>
         /// <returns>实体</returns>
         TEntity FindOrDefault(Expression<Func<TEntity, bool>> where = null);
+        /// <summary>
+        /// 查找实体是否在仓储中
+        /// </summary>
+        /// <param name="entity">实体</param>
+        /// <returns>存在标识</returns>
+        bool Exist(TEntity entity);
+        /// <summary>
+        /// 根据条件查找实体是否在仓储中
+        /// </summary>
+        /// <param name="where">条件</param>
+        /// <returns>存在标识</returns>
+        bool Exist(Expression<Func<TEntity, bool>> where);
         #endregion
 
         #region Insert
