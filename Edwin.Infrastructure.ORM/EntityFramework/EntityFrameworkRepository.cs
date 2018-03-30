@@ -21,14 +21,6 @@ namespace Edwin.Infrastructure.ORM.EntityFramework
             _context = context;
         }
 
-        #region Early Load
-        public IQueryable<TEntity> Load(Expression<Func<TEntity, object>> loadProp)
-        {
-            var query = _store.Include(loadProp);
-            return query;
-        }
-        #endregion
-
         #region Query
         public IQueryable<TEntity> FindAll() => _store;
 
@@ -36,16 +28,19 @@ namespace Edwin.Infrastructure.ORM.EntityFramework
 
         public TEntity FindById(TPrimaryKey key) => _store.First(e => e.Id.Equals(key));
 
+        public Task<TEntity> FindByIdAsync(TPrimaryKey key) => _store.FirstAsync(e => e.Id.Equals(key));
+
         public TEntity Find(Expression<Func<TEntity, bool>> where = null) => _store.First(where);
+
+        public Task<TEntity> FindAsync(Expression<Func<TEntity, bool>> where = null) => _store.FirstAsync(where);
 
         public TEntity FindOrDefaultById(TPrimaryKey key) => _store.FirstOrDefault(e => e.Id.Equals(key));
 
-        public TEntity FindOrDefault(Expression<Func<TEntity, bool>> where = null)
-        {
-            var entity = _store.FirstOrDefault(where);
-            _context.SaveChanges();
-            return entity;
-        }
+        public Task<TEntity> FindOrDefaultByIdAsync(TPrimaryKey key) => _store.FirstOrDefaultAsync(e => e.Id.Equals(key));
+
+        public TEntity FindOrDefault(Expression<Func<TEntity, bool>> where = null) => _store.FirstOrDefault(where);
+
+        public Task<TEntity> FindOrDefaultAsync(Expression<Func<TEntity, bool>> where = null) => _store.FirstOrDefaultAsync(where);
 
         public int Count() => _store.Count();
 
@@ -73,6 +68,19 @@ namespace Edwin.Infrastructure.ORM.EntityFramework
             _context.SaveChanges();
             return entry.Entity.Id;
         }
+
+        public async Task InsertAsync(TEntity entity)
+        {
+            await _context.AddAsync(entity);
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task<TPrimaryKey> InsertAndGetIdAsync(TEntity entity)
+        {
+            var entry = await _context.AddAsync(entity);
+            await _context.SaveChangesAsync();
+            return entry.Entity.Id;
+        }
         #endregion
 
         #region Update
@@ -82,6 +90,12 @@ namespace Edwin.Infrastructure.ORM.EntityFramework
             _context.SaveChanges();
         }
 
+        public async Task UpdateAsync(TEntity entity)
+        {
+            _context.Update(entity);
+            await _context.SaveChangesAsync();
+        }
+
         public void Update(TPrimaryKey key, Action<TEntity> action)
         {
             var entity = FindById(key);
@@ -89,15 +103,20 @@ namespace Edwin.Infrastructure.ORM.EntityFramework
             _context.Update(entity);
             _context.SaveChanges();
         }
+
+        public async Task UpdateAsync(TPrimaryKey key, Action<TEntity> action)
+        {
+            var entity = await FindByIdAsync(key);
+            action.Invoke(entity);
+            _context.Update(entity);
+            await _context.SaveChangesAsync();
+        }
         #endregion
 
         #region Delete
         public void Delete(Expression<Func<TEntity, bool>> where = null)
         {
-            foreach (var item in _store.Where(where))
-            {
-                _context.Remove(item);
-            }
+            _context.RemoveRange(_store.Where(where));
             _context.SaveChanges();
         }
 
@@ -111,6 +130,24 @@ namespace Edwin.Infrastructure.ORM.EntityFramework
         {
             _context.Remove(entity);
             _context.SaveChanges();
+        }
+
+        public async Task DeleteByIdAsync(TPrimaryKey key)
+        {
+            _context.Remove(await FindByIdAsync(key));
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task DeleteAsync(TEntity entity)
+        {
+            _context.Remove(entity);
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task DeleteAsync(Expression<Func<TEntity, bool>> where)
+        {
+            _context.RemoveRange(_store.Where(where));
+            await _context.SaveChangesAsync();
         }
         #endregion
     }

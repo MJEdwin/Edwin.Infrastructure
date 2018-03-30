@@ -6,6 +6,12 @@ namespace Edwin.Infrastructure.Extensions
 {
     public static class ByteArrayExtensions
     {
+        /// <summary>
+        /// Convert Byte Array To String
+        /// </summary>
+        /// <param name="data">Byte Array</param>
+        /// <param name="format">Format</param>
+        /// <returns>String</returns>
         public static string ToString(this byte[] data, string format)
         {
             string convert = string.Empty;

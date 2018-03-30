@@ -5,6 +5,10 @@ using System.Threading.Tasks;
 
 namespace Edwin.Infrastructure.DDD.Event
 {
+    /// <summary>
+    /// 事件处理接口
+    /// </summary>
+    /// <typeparam name="TEventData"></typeparam>
     public interface IEventHandler<TEventData>
         where TEventData : IEventData
     {

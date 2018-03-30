@@ -52,6 +52,7 @@ namespace Edwin.Infrastructure.ORM.EntityFramework
             service.AddSingleton<IUnitOfWorkManager, EntityFrameworkUnitOfWorkManager<TContext>>();
             return service;
         }
+
         public static IServiceCollection AddEntityFrameworkPool<TContext>(this IServiceCollection service, Action<DbContextOptionsBuilder> options, int poolSize = 128)
             where TContext : DbContext
         {

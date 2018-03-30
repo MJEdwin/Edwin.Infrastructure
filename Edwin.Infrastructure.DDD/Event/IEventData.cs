@@ -7,7 +7,7 @@ namespace Edwin.Infrastructure.DDD.Event
     public interface IEventData
     {
         /// <summary>
-        /// 事件触发事件
+        /// 事件触发时间
         /// </summary>
         DateTime EventTime { get; set; }
         /// <summary>

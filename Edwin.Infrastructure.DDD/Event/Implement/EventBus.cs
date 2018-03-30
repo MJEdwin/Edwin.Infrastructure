@@ -5,10 +5,18 @@ using System.Threading.Tasks;
 
 namespace Edwin.Infrastructure.DDD.Event.Implement
 {
+    /// <summary>
+    /// 全球事件总线实现
+    /// </summary>
     public class EventBus : IEventBus
     {
+        /// <summary>
+        /// 事件字典
+        /// </summary>
         private readonly Dictionary<Type, List<Type>> _eventDictionary = new Dictionary<Type, List<Type>>();
-
+        /// <summary>
+        /// 依赖注入服务
+        /// </summary>
         private IServiceProvider _serviceProvider;
 
         public EventBus(IServiceProvider serviceProvider)
@@ -20,13 +28,14 @@ namespace Edwin.Infrastructure.DDD.Event.Implement
         {
             if (!_eventDictionary.ContainsKey(eventData))
                 _eventDictionary.Add(eventData, new List<Type>());
-
+            //向事件字典注册事件
             _eventDictionary[eventData].Add(eventHandler);
         }
 
         private void DoHandler<TEventData>(IEventHandler<TEventData> handler, TEventData data)
             where TEventData : IEventData
         {
+            //根据事件是否异步判断是否需要异步执行
             if (handler.Async)
             {
                 Task.Run(() => handler.HandlerEvent(data));
