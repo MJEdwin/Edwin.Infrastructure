@@ -12,31 +12,25 @@ namespace Edwin.Infrastructure.ORM.EntityFramework
     {
         private TContext _context;
 
-        private IDbContextTransaction _transaction;
-
         public EntityFrameworkUnitOfWork(TContext context)
         {
             _context = context;
-            _transaction = _context.Database.BeginTransaction();
         }
 
         public void Complete()
         {
             try
             {
-                _transaction.Commit();
+                _context.SaveChanges();
             }
             catch (Exception e)
             {
-                _transaction.Rollback();
                 throw e;
             }
         }
 
         public void Dispose()
         {
-            if (_transaction != null)
-                _transaction.Dispose();
         }
     }
 }

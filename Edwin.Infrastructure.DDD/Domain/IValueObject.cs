@@ -4,8 +4,7 @@ using System.Text;
 
 namespace Edwin.Infrastructure.DDD.Domain
 {
-    public interface ITreeEntity<TPrimaryKey> : IEntity<TPrimaryKey>
+    public interface IValueObject<TValueObject> : IEquatable<TValueObject>
     {
-        TPrimaryKey ParentId { get; set; }
     }
 }

@@ -4,8 +4,7 @@ using System.Text;
 
 namespace Edwin.Infrastructure.DDD.Domain
 {
-    public interface ITreeEntity<TPrimaryKey> : IEntity<TPrimaryKey>
+    public interface IAggregateRoot
     {
-        TPrimaryKey ParentId { get; set; }
     }
 }

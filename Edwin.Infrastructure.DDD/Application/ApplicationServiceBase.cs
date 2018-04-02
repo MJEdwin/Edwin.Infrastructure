@@ -2,7 +2,7 @@
 using Edwin.Infrastructure.Query;
 using Edwin.Infrastructure.Serializer;
 using Edwin.Infrastructure.DDD.UnitOfWork;
-using Edwin.Infrastructure.DDD.Domian;
+using Edwin.Infrastructure.DDD.Domain;
 using Edwin.Infrastructure.DDD.Repositories;
 using System;
 using System.Collections.Generic;
@@ -13,21 +13,21 @@ using Microsoft.Extensions.Logging;
 namespace Edwin.Infrastructure.DDD.Application
 {
     public class ApplicationServiceBase<TEntity, TPrimaryKey> : IApplicationService<TEntity, TPrimaryKey>
-        where TEntity : class, IEntity<TPrimaryKey>
+        where TEntity : class, IEntity<TPrimaryKey>,IAggregateRoot
         where TPrimaryKey : IEquatable<TPrimaryKey>
     {
-        protected IRepository<TEntity, TPrimaryKey> _repository;
+        protected IEntityRepository<TEntity, TPrimaryKey> _repository;
         protected IUnitOfWorkManager _manager;
         protected ILogger<ApplicationServiceBase<TEntity, TPrimaryKey>> _logger;
 
-        public ApplicationServiceBase(IRepository<TEntity, TPrimaryKey> repository, IUnitOfWorkManager manager, ILogger<ApplicationServiceBase<TEntity, TPrimaryKey>> logger)
+        public ApplicationServiceBase(IEntityRepository<TEntity, TPrimaryKey> repository, IUnitOfWorkManager manager, ILogger<ApplicationServiceBase<TEntity, TPrimaryKey>> logger)
         {
             _repository = repository;
             _manager = manager;
             _logger = logger;
         }
 
-        #region Query
+        #region Queries
         public IQueryable<TEntity> GetAll()
             => _repository.FindAll();
 
@@ -56,7 +56,7 @@ namespace Edwin.Infrastructure.DDD.Application
                 using (var unitOfWork = _manager.Begin())
                 {
                     var entity = dto.MapTo<TDTO, TEntity>();
-                    _repository.Insert(entity);
+                    entity = _repository.Add(entity);
                     unitOfWork.Complete();
                     return entity;
                 }
@@ -77,7 +77,7 @@ namespace Edwin.Infrastructure.DDD.Application
                 {
                     var entity = new DictionarySerializer<TEntity>(CompareWay.ToLower)
                         .Deserialize(dictionary);
-                    _repository.Insert(entity);
+                    _repository.Add(entity);
                     unitOfWork.Complete();
                     return entity;
                 }
@@ -117,7 +117,7 @@ namespace Edwin.Infrastructure.DDD.Application
                 using (var unitOfWork = _manager.Begin())
                 {
                     var entity = GetById(id);
-                    entity.Update(dictionary);
+                    entity.ChangeProperty(dictionary);
                     _repository.Update(entity);
                     unitOfWork.Complete();
                     return entity;
@@ -139,8 +139,7 @@ namespace Edwin.Infrastructure.DDD.Application
                 {
                     foreach (var key in id)
                     {
-                        _repository.DeleteById(key);
-
+                        _repository.RemoveById(key);
                     }
                     unitOfWork.Complete();
                 }

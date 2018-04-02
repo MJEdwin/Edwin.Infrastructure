@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Edwin.Infrastructure.DDD.Domian
+namespace Edwin.Infrastructure.DDD.Domain
 {
     public class GuidEntity : IEntity<Guid>
     {
@@ -10,7 +10,6 @@ namespace Edwin.Infrastructure.DDD.Domian
         {
             Id = Guid.NewGuid();
         }
-
         public Guid Id { get; set; }
     }
 }

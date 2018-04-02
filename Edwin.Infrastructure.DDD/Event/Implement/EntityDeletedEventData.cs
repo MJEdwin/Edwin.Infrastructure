@@ -1,4 +1,4 @@
-﻿using Edwin.Infrastructure.DDD.Domian;
+﻿using Edwin.Infrastructure.DDD.Domain;
 using System;
 using System.Collections.Generic;
 using System.Text;

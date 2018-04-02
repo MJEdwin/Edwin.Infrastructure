@@ -5,7 +5,7 @@ using System;
 using System.Reflection.Emit;
 using System.Collections.Generic;
 using System.Text;
-using Edwin.Infrastructure.DDD.Domian;
+using Edwin.Infrastructure.DDD.Domain;
 using System.Reflection;
 using Edwin.Infrastructure.DDD.UnitOfWork;
 
@@ -22,10 +22,10 @@ namespace Edwin.Infrastructure.ORM.EntityFramework
             //设置类
             var typeBuilder = moduleBuilder.DefineType(type.Name, TypeAttributes.Public | TypeAttributes.Class);
             //设置泛型约束
-            var gtpBuilder = typeBuilder.DefineGenericParameters("TEntity", "TPrimaryKey");
+            var gtpBuilder = typeBuilder.DefineGenericParameters("TEntity", "TIdentify");
             //设置泛型约束
             gtpBuilder[0].SetGenericParameterAttributes(GenericParameterAttributes.ReferenceTypeConstraint);
-            gtpBuilder[0].SetInterfaceConstraints(typeof(IEntity<>).MakeGenericType(gtpBuilder[1].AsType()));
+            gtpBuilder[0].SetInterfaceConstraints(typeof(IAggregateRoot),typeof(IEntity<>).MakeGenericType(gtpBuilder[1].AsType()));
             //设置父类
             var parentType = type.MakeGenericType(dbcontext, gtpBuilder[0].AsType(), gtpBuilder[1].AsType());
             typeBuilder.SetParent(parentType);
@@ -47,9 +47,12 @@ namespace Edwin.Infrastructure.ORM.EntityFramework
         {
             service.AddDbContext<TContext>(options, serviceLifetime);
 
-            service.AddScoped(typeof(IRepository<,>), CreateRepositoryClassProxy(typeof(EntityFrameworkRepository<,,>), typeof(TContext)));
+            //service.AddScoped(typeof(IRepository<>), CreateRepositoryClassProxy(typeof(EntityFrameworkRepository<,,>), typeof(TContext)));
+            var proxyType = CreateRepositoryClassProxy(typeof(EntityFrameworkRepository<,,>), typeof(TContext));
+            service.AddScoped(typeof(IEntityRepository<,>), proxyType);
+            service.AddScoped(typeof(IRepository<>), proxyType);
 
-            service.AddSingleton<IUnitOfWorkManager, EntityFrameworkUnitOfWorkManager<TContext>>();
+            service.AddScoped<IUnitOfWorkManager, EntityFrameworkUnitOfWorkManager<TContext>>();
             return service;
         }
 
@@ -58,9 +61,11 @@ namespace Edwin.Infrastructure.ORM.EntityFramework
         {
             service.AddDbContextPool<TContext>(options, poolSize);
 
-            service.AddScoped(typeof(IRepository<,>), CreateRepositoryClassProxy(typeof(EntityFrameworkRepository<,,>), typeof(TContext)));
+            var proxyType = CreateRepositoryClassProxy(typeof(EntityFrameworkRepository<,,>), typeof(TContext));
+            service.AddScoped(typeof(IEntityRepository<,>), proxyType);
+            service.AddScoped(typeof(IRepository<>), proxyType);
 
-            service.AddSingleton<IUnitOfWorkManager, EntityFrameworkUnitOfWorkManager<TContext>>();
+            service.AddScoped<IUnitOfWorkManager, EntityFrameworkUnitOfWorkManager<TContext>>();
 
             return service;
         }

@@ -40,10 +40,12 @@ D:\Repos\git\Edwin.Infrastructure\Edwin.Infrastructure.DDD\bin\Debug\netstandard
 D:\Repos\git\Edwin.Infrastructure\Edwin.Infrastructure.DDD\bin\Debug\netstandard2.0\Edwin.Infrastructure.Core.dll
 D:\Repos\git\Edwin.Infrastructure\Edwin.Infrastructure.DDD\bin\Debug\netstandard2.0\Edwin.Infrastructure.Query.dll
 D:\Repos\git\Edwin.Infrastructure\Edwin.Infrastructure.DDD\bin\Debug\netstandard2.0\Edwin.Infrastructure.Reflection.dll
+D:\Repos\git\Edwin.Infrastructure\Edwin.Infrastructure.DDD\bin\Debug\netstandard2.0\System.ComponentModel.Annotations.dll
 D:\Repos\git\Edwin.Infrastructure\Edwin.Infrastructure.DDD\bin\Debug\netstandard2.0\Edwin.Infrastructure.Query.pdb
 D:\Repos\git\Edwin.Infrastructure\Edwin.Infrastructure.DDD\bin\Debug\netstandard2.0\Edwin.Infrastructure.Core.pdb
 D:\Repos\git\Edwin.Infrastructure\Edwin.Infrastructure.DDD\bin\Debug\netstandard2.0\Edwin.Infrastructure.Reflection.pdb
 D:\Repos\git\Edwin.Infrastructure\Edwin.Infrastructure.DDD\bin\Debug\netstandard2.0\Edwin.Infrastructure.AutoMapper.pdb
+D:\Repos\git\Edwin.Infrastructure\Edwin.Infrastructure.DDD\bin\Debug\netstandard2.0\System.ComponentModel.Annotations.xml
 D:\Repos\git\Edwin.Infrastructure\Edwin.Infrastructure.DDD\obj\Debug\netstandard2.0\Edwin.Infrastructure.DDD.csprojResolveAssemblyReference.cache
 D:\Repos\git\Edwin.Infrastructure\Edwin.Infrastructure.DDD\obj\Debug\netstandard2.0\Edwin.Infrastructure.DDD.csproj.CoreCompileInputs.cache
 D:\Repos\git\Edwin.Infrastructure\Edwin.Infrastructure.DDD\obj\Debug\netstandard2.0\Edwin.Infrastructure.DDD.AssemblyInfoInputs.cache

@@ -4,41 +4,39 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Edwin.Infrastructure.DDD.Domian
+namespace Edwin.Infrastructure.DDD.Domain
 {
     public static class EntityExtension
     {
-        public static void Update<TPrimaryKey>(this IEntity<TPrimaryKey> entity, string key, object value)
+        public static void ChangeProperty<TPrimaryKey>(this IEntity<TPrimaryKey> entity, string key, object value)
             where TPrimaryKey : IEquatable<TPrimaryKey>
         {
             var props = entity.GetType().GetProperties();
-            var prop = props.FirstOrDefault(p => p.Name.ToLower() == key);
+            var prop = props.FirstOrDefault(p => p.Name == key);
             if (prop != null)
                 prop.SetValue(entity, value);
         }
 
-        public static void Update<TPrimaryKey>(this IEntity<TPrimaryKey> entity, Dictionary<string, object> dictionary)
+        public static void ChangeProperty<TPrimaryKey>(this IEntity<TPrimaryKey> entity, Dictionary<string, object> dictionary)
             where TPrimaryKey : IEquatable<TPrimaryKey>
         {
             foreach (var prop in entity.GetType().GetProperties())
             {
-                var key = prop.Name.ToLower();
-                if (dictionary.ContainsKey(key))
+                if (dictionary.ContainsKey(prop.Name))
                 {
-                    prop.SetValue(entity, dictionary[key]);
+                    prop.SetValue(entity, dictionary[prop.Name]);
                 }
             }
         }
 
-        public static void Update<TPrimaryKey>(this IEntity<TPrimaryKey> entity, JObject @object)
+        public static void ChangeProperty<TPrimaryKey>(this IEntity<TPrimaryKey> entity, JObject @object)
             where TPrimaryKey : IEquatable<TPrimaryKey>
         {
             foreach (var prop in entity.GetType().GetProperties())
             {
-                var key = prop.Name.ToLower();
-                if (@object.ContainsKey(key))
+                if (@object.ContainsKey(prop.Name))
                 {
-                    prop.SetValue(entity, @object[key].ToObject(prop.PropertyType));
+                    prop.SetValue(entity, @object[prop.Name].ToObject(prop.PropertyType));
                 }
             }
         }
