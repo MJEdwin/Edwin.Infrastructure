@@ -6,27 +6,27 @@ namespace Edwin.Infrastructure.DDD.Event
 {
     public static class EventBusExtenisions
     {
-        public static void Register<TEventData>(this IEventBus eventBus, Type eventHandler)
+        public static void Subscribe<TEventData>(this IEventBus eventBus, Type eventHandler)
             where TEventData : IEventData
         {
-            eventBus.Register(typeof(TEventData), eventHandler);
+            eventBus.Subscribe(typeof(TEventData), eventHandler);
         }
-        public static void Register<TEventData, TEventHandler>(this IEventBus eventBus) where TEventData : IEventData where TEventHandler : IEventHandler<TEventData>
+        public static void Subscribe<TEventData, TEventHandler>(this IEventBus eventBus) where TEventData : IEventData where TEventHandler : IEventHandler<TEventData>
         {
-            eventBus.Register(typeof(TEventData), typeof(TEventHandler));
+            eventBus.Subscribe(typeof(TEventData), typeof(TEventHandler));
         }
 
-        public static void UnRegister<TEventData>(this IEventBus eventBus, Type eventHandler)
+        public static void UnSubscribe<TEventData>(this IEventBus eventBus, Type eventHandler)
             where TEventData : IEventData
         {
-            eventBus.UnRegister(typeof(TEventData), eventHandler);
+            eventBus.UnSubscribe(typeof(TEventData), eventHandler);
         }
 
-        public static void UnRegister<TEventData, TEventHandler>(this IEventBus eventBus)
+        public static void UnSubscribe<TEventData, TEventHandler>(this IEventBus eventBus)
             where TEventData : IEventData
             where TEventHandler : IEventHandler<TEventData>
         {
-            eventBus.UnRegister(typeof(TEventData), typeof(TEventHandler));
+            eventBus.UnSubscribe(typeof(TEventData), typeof(TEventHandler));
         }
     }
 }

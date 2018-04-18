@@ -24,7 +24,7 @@ namespace Edwin.Infrastructure.DDD.Event.Implement
             _serviceProvider = serviceProvider;
         }
 
-        public void Register(Type eventData, Type eventHandler)
+        public void Subscribe(Type eventData, Type eventHandler)
         {
             if (!_eventDictionary.ContainsKey(eventData))
                 _eventDictionary.Add(eventData, new List<Type>());
@@ -44,13 +44,13 @@ namespace Edwin.Infrastructure.DDD.Event.Implement
                 handler.HandlerEvent(data);
         }
 
-        public void Trigger<TEventData>(TEventData data) where TEventData : IEventData
+        public void Publish<TEventData>(TEventData data) where TEventData : IEventData
         {
             var findType = typeof(TEventData);
             foreach (var key in _eventDictionary.Keys)
             {
                 //判断是否禁止冒泡
-                if ((data.DisableBubbling ? false : findType.IsSubclassOf(key)) || findType == key)
+                if ((data.Inherited ? false : findType.IsSubclassOf(key)) || findType == key)
                 {
                     foreach (Type type in _eventDictionary[key])
                     {
@@ -68,7 +68,7 @@ namespace Edwin.Infrastructure.DDD.Event.Implement
             }
         }
 
-        public void UnRegister(Type eventData, Type eventHandler)
+        public void UnSubscribe(Type eventData, Type eventHandler)
         {
             if (_eventDictionary.ContainsKey(eventData))
                 _eventDictionary[eventData].Remove(eventHandler);

@@ -11,11 +11,13 @@ namespace Edwin.Infrastructure.DDD.Event
     {
         public static IServiceCollection AddEventBus(this IServiceCollection service)
         {
+            //获取所有事件处理器，并将所有处理器进行依赖注入
             var types = TypeFinder.GetTypes(type => type.IsClass && type.GetInterface(typeof(IEventHandler<>).Name) != null);
             foreach (var type in types)
             {
-                service.AddTransient(type);
+                service.AddSingleton(type);
             }
+            //注册全球事件总线
             service.AddSingleton<IEventBus, EventBus>(serviceProvider =>
             {
                 var instance = new EventBus(serviceProvider);
@@ -25,7 +27,8 @@ namespace Edwin.Infrastructure.DDD.Event
                     {
                         if (@interface.Name == typeof(IEventHandler<>).Name)
                         {
-                            instance.Register(@interface.GetGenericArguments()[0], type);
+                            //对事件处理器进行订阅
+                            instance.Subscribe(@interface.GetGenericArguments()[0], type);
                         }
                     }
                 }

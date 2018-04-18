@@ -17,6 +17,6 @@ namespace Edwin.Infrastructure.DDD.Event
         /// <summary>
         /// 是否阻止向子类传递
         /// </summary>
-        bool DisableBubbling { get; set; }
+        bool Inherited { get; set; }
     }
 }

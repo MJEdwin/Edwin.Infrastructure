@@ -117,7 +117,7 @@ namespace Edwin.Infrastructure.DDD.Application
                 using (var unitOfWork = _manager.Begin())
                 {
                     var entity = GetById(id);
-                    entity.ChangeProperty(dictionary);
+                    entity.ChangeProperties(dictionary);
                     _repository.Update(entity);
                     unitOfWork.Complete();
                     return entity;

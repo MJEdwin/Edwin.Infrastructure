@@ -10,7 +10,7 @@ namespace Edwin.Infrastructure.DDD.Event.Implement
         public object Entity { get; set; }
         public DateTime EventTime { get; set; }
         public object EventSource { get; set; }
-        public bool DisableBubbling { get; set; }
+        public bool Inherited { get; set; }
     }
 
     public class EntityEventData<TEntity> : EntityEventData, IEntityEventData<TEntity>

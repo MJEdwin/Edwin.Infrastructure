@@ -9,7 +9,6 @@ namespace Edwin.Infrastructure.DDD.Domain
     public static class EntityExtension
     {
         public static void ChangeProperty<TPrimaryKey>(this IEntity<TPrimaryKey> entity, string key, object value)
-            where TPrimaryKey : IEquatable<TPrimaryKey>
         {
             var props = entity.GetType().GetProperties();
             var prop = props.FirstOrDefault(p => p.Name == key);
@@ -17,8 +16,7 @@ namespace Edwin.Infrastructure.DDD.Domain
                 prop.SetValue(entity, value);
         }
 
-        public static void ChangeProperty<TPrimaryKey>(this IEntity<TPrimaryKey> entity, Dictionary<string, object> dictionary)
-            where TPrimaryKey : IEquatable<TPrimaryKey>
+        public static void ChangeProperties<TPrimaryKey>(this IEntity<TPrimaryKey> entity, Dictionary<string, object> dictionary)
         {
             foreach (var prop in entity.GetType().GetProperties())
             {
@@ -29,8 +27,7 @@ namespace Edwin.Infrastructure.DDD.Domain
             }
         }
 
-        public static void ChangeProperty<TPrimaryKey>(this IEntity<TPrimaryKey> entity, JObject @object)
-            where TPrimaryKey : IEquatable<TPrimaryKey>
+        public static void ChangeProperties<TPrimaryKey>(this IEntity<TPrimaryKey> entity, JObject @object)
         {
             foreach (var prop in entity.GetType().GetProperties())
             {
