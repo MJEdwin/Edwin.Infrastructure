@@ -1,9 +1,0 @@
-D:\Repos\git\Edwin.Infrastructure\Edwin.Infrastructure.TagHelpers\bin\Debug\netcoreapp2.0\Edwin.Infrastructure.TagHelpers.deps.json
-D:\Repos\git\Edwin.Infrastructure\Edwin.Infrastructure.TagHelpers\bin\Debug\netcoreapp2.0\Edwin.Infrastructure.TagHelpers.dll
-D:\Repos\git\Edwin.Infrastructure\Edwin.Infrastructure.TagHelpers\bin\Debug\netcoreapp2.0\Edwin.Infrastructure.TagHelpers.pdb
-D:\Repos\git\Edwin.Infrastructure\Edwin.Infrastructure.TagHelpers\obj\Debug\netcoreapp2.0\Edwin.Infrastructure.TagHelpers.csprojResolveAssemblyReference.cache
-D:\Repos\git\Edwin.Infrastructure\Edwin.Infrastructure.TagHelpers\obj\Debug\netcoreapp2.0\Edwin.Infrastructure.TagHelpers.csproj.CoreCompileInputs.cache
-D:\Repos\git\Edwin.Infrastructure\Edwin.Infrastructure.TagHelpers\obj\Debug\netcoreapp2.0\Edwin.Infrastructure.TagHelpers.AssemblyInfoInputs.cache
-D:\Repos\git\Edwin.Infrastructure\Edwin.Infrastructure.TagHelpers\obj\Debug\netcoreapp2.0\Edwin.Infrastructure.TagHelpers.AssemblyInfo.cs
-D:\Repos\git\Edwin.Infrastructure\Edwin.Infrastructure.TagHelpers\obj\Debug\netcoreapp2.0\Edwin.Infrastructure.TagHelpers.dll
-D:\Repos\git\Edwin.Infrastructure\Edwin.Infrastructure.TagHelpers\obj\Debug\netcoreapp2.0\Edwin.Infrastructure.TagHelpers.pdb

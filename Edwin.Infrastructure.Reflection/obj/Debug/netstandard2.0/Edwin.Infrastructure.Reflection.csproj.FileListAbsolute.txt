@@ -7,3 +7,11 @@ D:\Repos\NetSwagger\Edwin.Infrastructure\Edwin.Infrastructure.Reflection\obj\Deb
 D:\Repos\NetSwagger\Edwin.Infrastructure\Edwin.Infrastructure.Reflection\obj\Debug\netstandard2.0\Edwin.Infrastructure.Reflection.AssemblyInfo.cs
 D:\Repos\NetSwagger\Edwin.Infrastructure\Edwin.Infrastructure.Reflection\obj\Debug\netstandard2.0\Edwin.Infrastructure.Reflection.dll
 D:\Repos\NetSwagger\Edwin.Infrastructure\Edwin.Infrastructure.Reflection\obj\Debug\netstandard2.0\Edwin.Infrastructure.Reflection.pdb
+D:\Repos\git\Edwin.Infrastructure\Edwin.Infrastructure.Reflection\bin\Debug\netstandard2.0\Edwin.Infrastructure.Reflection.deps.json
+D:\Repos\git\Edwin.Infrastructure\Edwin.Infrastructure.Reflection\bin\Debug\netstandard2.0\Edwin.Infrastructure.Reflection.dll
+D:\Repos\git\Edwin.Infrastructure\Edwin.Infrastructure.Reflection\bin\Debug\netstandard2.0\Edwin.Infrastructure.Reflection.pdb
+D:\Repos\git\Edwin.Infrastructure\Edwin.Infrastructure.Reflection\obj\Debug\netstandard2.0\Edwin.Infrastructure.Reflection.csproj.CoreCompileInputs.cache
+D:\Repos\git\Edwin.Infrastructure\Edwin.Infrastructure.Reflection\obj\Debug\netstandard2.0\Edwin.Infrastructure.Reflection.AssemblyInfoInputs.cache
+D:\Repos\git\Edwin.Infrastructure\Edwin.Infrastructure.Reflection\obj\Debug\netstandard2.0\Edwin.Infrastructure.Reflection.AssemblyInfo.cs
+D:\Repos\git\Edwin.Infrastructure\Edwin.Infrastructure.Reflection\obj\Debug\netstandard2.0\Edwin.Infrastructure.Reflection.dll
+D:\Repos\git\Edwin.Infrastructure\Edwin.Infrastructure.Reflection\obj\Debug\netstandard2.0\Edwin.Infrastructure.Reflection.pdb

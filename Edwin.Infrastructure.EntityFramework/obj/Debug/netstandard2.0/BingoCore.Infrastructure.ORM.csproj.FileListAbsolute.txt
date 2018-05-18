@@ -1,0 +1,5 @@
+D:\Repos\NetSwagger\Edwin.Infrastructure\Edwin.Infrastructure.ORM\bin\Debug\netstandard2.0\BingoCore.Infrastructure.Core.dll
+D:\Repos\NetSwagger\Edwin.Infrastructure\Edwin.Infrastructure.ORM\obj\Debug\netstandard2.0\BingoCore.Infrastructure.ORM.csprojResolveAssemblyReference.cache
+D:\Repos\NetSwagger\Edwin.Infrastructure\Edwin.Infrastructure.ORM\obj\Debug\netstandard2.0\BingoCore.Infrastructure.ORM.csproj.CoreCompileInputs.cache
+D:\Repos\NetSwagger\Edwin.Infrastructure\Edwin.Infrastructure.ORM\obj\Debug\netstandard2.0\BingoCore.Infrastructure.ORM.AssemblyInfoInputs.cache
+D:\Repos\NetSwagger\Edwin.Infrastructure\Edwin.Infrastructure.ORM\obj\Debug\netstandard2.0\BingoCore.Infrastructure.ORM.AssemblyInfo.cs
