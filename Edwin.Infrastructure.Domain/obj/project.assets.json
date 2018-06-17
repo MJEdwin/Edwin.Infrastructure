@@ -640,9 +640,6 @@
       "Edwin.Infrastructure.Core/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
-        "dependencies": {
-          "Edwin.Infrastructure.AutoMapper": "1.0.0"
-        },
         "compile": {
           "bin/placeholder/Edwin.Infrastructure.Core.dll": {}
         },
@@ -3077,6 +3074,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
+      "Edwin.Infrastructure.AutoMapper >= 1.0.0",
       "Edwin.Infrastructure.Core >= 1.0.0",
       "Edwin.Infrastructure.Query >= 1.0.0",
       "Microsoft.Extensions.Logging.Abstractions >= 2.0.1",
@@ -3115,6 +3113,9 @@
       "frameworks": {
         "netstandard2.0": {
           "projectReferences": {
+            "D:\\Repos\\git\\Edwin.Infrastructure\\Edwin.Infrastructure.AutoMapper\\Edwin.Infrastructure.AutoMapper.csproj": {
+              "projectPath": "D:\\Repos\\git\\Edwin.Infrastructure\\Edwin.Infrastructure.AutoMapper\\Edwin.Infrastructure.AutoMapper.csproj"
+            },
             "D:\\Repos\\git\\Edwin.Infrastructure\\Edwin.Infrastructure.Core\\Edwin.Infrastructure.Core.csproj": {
               "projectPath": "D:\\Repos\\git\\Edwin.Infrastructure\\Edwin.Infrastructure.Core\\Edwin.Infrastructure.Core.csproj"
             },

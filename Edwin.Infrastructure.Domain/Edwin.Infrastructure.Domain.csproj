@@ -10,6 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Edwin.Infrastructure.AutoMapper\Edwin.Infrastructure.AutoMapper.csproj" />
     <ProjectReference Include="..\Edwin.Infrastructure.Query\Edwin.Infrastructure.Query.csproj" />
     <ProjectReference Include="..\Edwin.Infrastructure.Core\Edwin.Infrastructure.Core.csproj" />
   </ItemGroup>

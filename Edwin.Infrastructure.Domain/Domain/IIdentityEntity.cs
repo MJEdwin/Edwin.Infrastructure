@@ -5,9 +5,7 @@ using System.Text;
 
 namespace Edwin.Infrastructure.Domain.Domain
 {
-    public class IdentityEntity : IEntity<int>
+    public interface IIdentityEntity : IEntity<int>
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
     }
 }

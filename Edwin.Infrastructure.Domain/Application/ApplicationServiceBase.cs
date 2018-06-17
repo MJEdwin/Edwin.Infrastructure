@@ -13,14 +13,16 @@ using Microsoft.Extensions.Logging;
 namespace Edwin.Infrastructure.Domain.Application
 {
     public class ApplicationServiceBase<TEntity, TPrimaryKey> : IApplicationService<TEntity, TPrimaryKey>
-        where TEntity : class, IEntity<TPrimaryKey>,IAggregateRoot
+        where TEntity : class, IEntity<TPrimaryKey>, IAggregateRoot
         where TPrimaryKey : IEquatable<TPrimaryKey>
     {
         protected IEntityRepository<TEntity, TPrimaryKey> _repository;
         protected IUnitOfWorkManager _manager;
         protected ILogger<ApplicationServiceBase<TEntity, TPrimaryKey>> _logger;
 
-        public ApplicationServiceBase(IEntityRepository<TEntity, TPrimaryKey> repository, IUnitOfWorkManager manager, ILogger<ApplicationServiceBase<TEntity, TPrimaryKey>> logger)
+        public ApplicationServiceBase(IEntityRepository<TEntity, TPrimaryKey> repository,
+            IUnitOfWorkManager manager,
+            ILogger<ApplicationServiceBase<TEntity, TPrimaryKey>> logger)
         {
             _repository = repository;
             _manager = manager;
@@ -75,8 +77,8 @@ namespace Edwin.Infrastructure.Domain.Application
             {
                 using (var unitOfWork = _manager.Begin())
                 {
-                    var entity = new DictionarySerializer<TEntity>(CompareWay.ToLower)
-                        .Deserialize(dictionary);
+                    var entity = new DictionarySerializer(new DictionarySerializeSetting { NameConvert=NameConvert.ToLower })
+                        .Deserialize<TEntity, Dictionary<string, object>>(dictionary);
                     _repository.Add(entity);
                     unitOfWork.Complete();
                     return entity;

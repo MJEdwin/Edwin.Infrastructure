@@ -6,8 +6,4 @@
     <RootNamespace>Edwin.Infrastructure</RootNamespace>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Edwin.Infrastructure.AutoMapper\Edwin.Infrastructure.AutoMapper.csproj" />
-  </ItemGroup>
-
 </Project>

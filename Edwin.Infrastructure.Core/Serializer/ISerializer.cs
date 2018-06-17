@@ -4,10 +4,10 @@ using System.Text;
 
 namespace Edwin.Infrastructure.Serializer
 {
-    public interface ISerializer<TSourse, TDestination>
+    public interface ISerializer<TDestination>
     {
-        TDestination Serialize(TSourse sourse);
+        TDestination Serialize(object sourse);
 
-        TSourse Deserialize(TDestination destination);
+        object Deserialize(TDestination destination,Type sourseType);
     }
 }

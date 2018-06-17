@@ -1,5 +1,4 @@
-﻿using AutoMapper;
-using Edwin.Infrastructure.Reflection;
+﻿using Edwin.Infrastructure.Reflection;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
