@@ -19,6 +19,7 @@ using Swashbuckle.AspNetCore.Swagger;
 using System.Reflection;
 using System.IO;
 using Edwin.TestApi.Interceptor;
+using Edwin.Infrastructure.Castle;
 
 namespace Edwin.TestApi
 {
@@ -53,13 +54,13 @@ namespace Edwin.TestApi
         // "Without ConfigureContainer" mechanism shown later.
         public void ConfigureContainer(ContainerBuilder builder)
         {
-            builder.RegisterType<Transaction>()
+            builder.RegisterType<InterceptorBase>()
                 .InstancePerLifetimeScope();
 
             builder.RegisterType<UserService>().As<IUserService>()
                 .InstancePerLifetimeScope()
                 .EnableInterfaceInterceptors()
-                .InterceptedBy(typeof(Transaction));
+                .InterceptedBy(typeof(InterceptorBase));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

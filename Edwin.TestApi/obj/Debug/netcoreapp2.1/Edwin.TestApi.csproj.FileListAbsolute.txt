@@ -25,3 +25,5 @@ D:\Repos\git\Edwin.Infrastructure\Edwin.TestApi\obj\Debug\netcoreapp2.1\Edwin.Te
 D:\Repos\git\Edwin.Infrastructure\Edwin.TestApi\obj\Debug\netcoreapp2.1\Edwin.TestApi.csproj.CopyComplete
 D:\Repos\git\Edwin.Infrastructure\Edwin.TestApi\obj\Debug\netcoreapp2.1\Edwin.TestApi.dll
 D:\Repos\git\Edwin.Infrastructure\Edwin.TestApi\obj\Debug\netcoreapp2.1\Edwin.TestApi.pdb
+D:\Repos\git\Edwin.Infrastructure\Edwin.TestApi\bin\Debug\netcoreapp2.1\Edwin.Infrastructure.Castle.dll
+D:\Repos\git\Edwin.Infrastructure\Edwin.TestApi\bin\Debug\netcoreapp2.1\Edwin.Infrastructure.Castle.pdb

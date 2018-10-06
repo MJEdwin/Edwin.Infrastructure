@@ -18,6 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Edwin.Infrastructure.Castle\Edwin.Infrastructure.Castle.csproj" />
     <ProjectReference Include="..\Edwin.Infrastructure.EntityFramework\Edwin.Infrastructure.EntityFramework.csproj" />
   </ItemGroup>
 

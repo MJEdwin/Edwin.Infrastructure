@@ -26,6 +26,7 @@
         "dependencies": {
           "Autofac.Extensions.DependencyInjection": "4.3.0",
           "Autofac.Extras.DynamicProxy": "4.5.0",
+          "Edwin.Infrastructure.Castle": "1.0.0",
           "Edwin.Infrastructure.EntityFramework": "1.0.0",
           "Microsoft.AspNetCore.App": "2.1.1",
           "Microsoft.NETCore.App": "2.1.0",
@@ -539,6 +540,17 @@
         },
         "compile": {
           "Edwin.Infrastructure.AutoMapper.dll": {}
+        }
+      },
+      "Edwin.Infrastructure.Castle/1.0.0": {
+        "dependencies": {
+          "Castle.Core": "4.3.1"
+        },
+        "runtime": {
+          "Edwin.Infrastructure.Castle.dll": {}
+        },
+        "compile": {
+          "Edwin.Infrastructure.Castle.dll": {}
         }
       },
       "Edwin.Infrastructure.Core/1.0.0": {
@@ -3678,6 +3690,11 @@
       "hashPath": "system.linq.queryable.4.3.0.nupkg.sha512"
     },
     "Edwin.Infrastructure.AutoMapper/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Edwin.Infrastructure.Castle/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

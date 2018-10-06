@@ -21,7 +21,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Edwin.Infrastructure.Http",
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Edwin.Services", "Edwin.Services", "{78689760-DA2E-4B58-82EE-CBA84A7FA2B0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Edwin.TestApi", "Edwin.TestApi\Edwin.TestApi.csproj", "{08512761-2B95-4CF5-8514-BB04162703EC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Edwin.TestApi", "Edwin.TestApi\Edwin.TestApi.csproj", "{08512761-2B95-4CF5-8514-BB04162703EC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Edwin.Infrastructure.Castle", "Edwin.Infrastructure.Castle\Edwin.Infrastructure.Castle.csproj", "{21AA1F4B-6FFD-420B-A63B-44A8A7EC40E9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -61,6 +63,10 @@ Global
 		{08512761-2B95-4CF5-8514-BB04162703EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{08512761-2B95-4CF5-8514-BB04162703EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{08512761-2B95-4CF5-8514-BB04162703EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21AA1F4B-6FFD-420B-A63B-44A8A7EC40E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21AA1F4B-6FFD-420B-A63B-44A8A7EC40E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21AA1F4B-6FFD-420B-A63B-44A8A7EC40E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21AA1F4B-6FFD-420B-A63B-44A8A7EC40E9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -74,6 +80,7 @@ Global
 		{B2D5B368-1342-44B2-868D-AB7497DD118C} = {BE0906B8-7A22-4561-977D-137F5EF3A999}
 		{060AD104-0B17-4C82-9EBF-B143DD9DE25A} = {BE0906B8-7A22-4561-977D-137F5EF3A999}
 		{08512761-2B95-4CF5-8514-BB04162703EC} = {78689760-DA2E-4B58-82EE-CBA84A7FA2B0}
+		{21AA1F4B-6FFD-420B-A63B-44A8A7EC40E9} = {BE0906B8-7A22-4561-977D-137F5EF3A999}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {87909587-EF9A-437F-B661-05F7A416555C}

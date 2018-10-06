@@ -4580,6 +4580,19 @@
           "bin/placeholder/Edwin.Infrastructure.AutoMapper.dll": {}
         }
       },
+      "Edwin.Infrastructure.Castle/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Castle.Core": "4.3.1"
+        },
+        "compile": {
+          "bin/placeholder/Edwin.Infrastructure.Castle.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Edwin.Infrastructure.Castle.dll": {}
+        }
+      },
       "Edwin.Infrastructure.Core/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -12166,6 +12179,11 @@
       "path": "../Edwin.Infrastructure.AutoMapper/Edwin.Infrastructure.AutoMapper.csproj",
       "msbuildProject": "../Edwin.Infrastructure.AutoMapper/Edwin.Infrastructure.AutoMapper.csproj"
     },
+    "Edwin.Infrastructure.Castle/1.0.0": {
+      "type": "project",
+      "path": "../Edwin.Infrastructure.Castle/Edwin.Infrastructure.Castle.csproj",
+      "msbuildProject": "../Edwin.Infrastructure.Castle/Edwin.Infrastructure.Castle.csproj"
+    },
     "Edwin.Infrastructure.Core/1.0.0": {
       "type": "project",
       "path": "../Edwin.Infrastructure.Core/Edwin.Infrastructure.Core.csproj",
@@ -12196,6 +12214,7 @@
     ".NETCoreApp,Version=v2.1": [
       "Autofac.Extensions.DependencyInjection >= 4.3.0",
       "Autofac.Extras.DynamicProxy >= 4.5.0",
+      "Edwin.Infrastructure.Castle >= 1.0.0",
       "Edwin.Infrastructure.EntityFramework >= 1.0.0",
       "Microsoft.AspNetCore.App >= 2.1.1",
       "Microsoft.NETCore.App >= 2.1.0",
@@ -12233,6 +12252,9 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
+            "D:\\Repos\\git\\Edwin.Infrastructure\\Edwin.Infrastructure.Castle\\Edwin.Infrastructure.Castle.csproj": {
+              "projectPath": "D:\\Repos\\git\\Edwin.Infrastructure\\Edwin.Infrastructure.Castle\\Edwin.Infrastructure.Castle.csproj"
+            },
             "D:\\Repos\\git\\Edwin.Infrastructure\\Edwin.Infrastructure.EntityFramework\\Edwin.Infrastructure.EntityFramework.csproj": {
               "projectPath": "D:\\Repos\\git\\Edwin.Infrastructure\\Edwin.Infrastructure.EntityFramework\\Edwin.Infrastructure.EntityFramework.csproj"
             }
