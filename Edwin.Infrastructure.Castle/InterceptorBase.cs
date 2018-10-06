@@ -46,7 +46,10 @@ namespace Edwin.Infrastructure.Castle
 
                 action(0).GetAwaiter().GetResult();
             }
-
+            else
+            {
+                invocation.Proceed();
+            }
         }
     }
 }
