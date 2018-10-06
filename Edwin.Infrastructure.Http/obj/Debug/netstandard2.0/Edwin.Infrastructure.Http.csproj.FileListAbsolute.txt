@@ -1,0 +1,12 @@
+D:\Repos\git\Edwin.Infrastructure\Edwin.Infrastructure.Http\obj\Debug\netstandard2.0\Edwin.Infrastructure.Http.csprojAssemblyReference.cache
+D:\Repos\git\Edwin.Infrastructure\Edwin.Infrastructure.Http\obj\Debug\netstandard2.0\Edwin.Infrastructure.Http.csproj.CoreCompileInputs.cache
+D:\Repos\git\Edwin.Infrastructure\Edwin.Infrastructure.Http\obj\Debug\netstandard2.0\Edwin.Infrastructure.Http.AssemblyInfoInputs.cache
+D:\Repos\git\Edwin.Infrastructure\Edwin.Infrastructure.Http\obj\Debug\netstandard2.0\Edwin.Infrastructure.Http.AssemblyInfo.cs
+D:\Repos\git\Edwin.Infrastructure\Edwin.Infrastructure.Http\bin\Debug\netstandard2.0\Edwin.Infrastructure.Http.deps.json
+D:\Repos\git\Edwin.Infrastructure\Edwin.Infrastructure.Http\bin\Debug\netstandard2.0\Edwin.Infrastructure.Http.dll
+D:\Repos\git\Edwin.Infrastructure\Edwin.Infrastructure.Http\bin\Debug\netstandard2.0\Edwin.Infrastructure.Http.pdb
+D:\Repos\git\Edwin.Infrastructure\Edwin.Infrastructure.Http\bin\Debug\netstandard2.0\Edwin.Infrastructure.Core.dll
+D:\Repos\git\Edwin.Infrastructure\Edwin.Infrastructure.Http\bin\Debug\netstandard2.0\Edwin.Infrastructure.Core.pdb
+D:\Repos\git\Edwin.Infrastructure\Edwin.Infrastructure.Http\obj\Debug\netstandard2.0\Edwin.Infrastructure.Http.csproj.CopyComplete
+D:\Repos\git\Edwin.Infrastructure\Edwin.Infrastructure.Http\obj\Debug\netstandard2.0\Edwin.Infrastructure.Http.dll
+D:\Repos\git\Edwin.Infrastructure\Edwin.Infrastructure.Http\obj\Debug\netstandard2.0\Edwin.Infrastructure.Http.pdb

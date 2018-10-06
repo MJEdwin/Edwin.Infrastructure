@@ -607,6 +607,9 @@
       "Edwin.Infrastructure.Reflection/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "System.Reflection.Emit": "4.3.0"
+        },
         "compile": {
           "bin/placeholder/Edwin.Infrastructure.Reflection.dll": {}
         },
@@ -2995,7 +2998,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "http://118.193.159.235:8080/": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

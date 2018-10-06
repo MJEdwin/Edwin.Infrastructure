@@ -11,6 +11,7 @@ namespace Edwin.Infrastructure.AutoMapper
     {
         public static IServiceCollection AddAutoMapper(this IServiceCollection service)
         {
+            //反射获取所有程序集中的autoMapper profile
             var assembies = AssemblyFinder.GetCustomerAssemblies().Select(a => a.FullName).ToArray();
             service.AddSingleton(new AutoMapperConfiguration(assembies).GetMapper());
             return service;

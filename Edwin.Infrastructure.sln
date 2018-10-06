@@ -11,19 +11,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Edwin.Infrastructure.Query"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Edwin.Infrastructure.AutoMapper", "Edwin.Infrastructure.AutoMapper\Edwin.Infrastructure.AutoMapper.csproj", "{CEED49F7-E107-40CE-90F9-749FAB949DFC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Edwin.Infrastructure.Service", "Edwin.Infrastructure.Service\Edwin.Infrastructure.Service.csproj", "{9397B1C3-8E7B-4A8B-AE4F-434105722447}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Edwin.Infrastructure.TagHelpers", "Edwin.Infrastructure.TagHelpers\Edwin.Infrastructure.TagHelpers.csproj", "{777AB2ED-5518-40E8-8A14-0A037CF6B5A8}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Edwin.Infrastructure", "Edwin.Infrastructure", "{BE0906B8-7A22-4561-977D-137F5EF3A999}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Edwin.Infrastructure.Domain", "Edwin.Infrastructure.Domain\Edwin.Infrastructure.Domain.csproj", "{094DC6C7-75E0-4A09-9DE5-E17D3EECED6B}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Edwin.Infrastructure.EntityFramework", "Edwin.Infrastructure.EntityFramework\Edwin.Infrastructure.EntityFramework.csproj", "{B2D5B368-1342-44B2-868D-AB7497DD118C}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Edwin.Infrastructure.Test", "Edwin.Infrastructure.Test", "{3E3BC046-1DA6-4E70-807A-68F9B4EB030B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Edwin.Infrastructure.Http", "Edwin.Infrastructure.Http\Edwin.Infrastructure.Http.csproj", "{060AD104-0B17-4C82-9EBF-B143DD9DE25A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Edwin.Infrastructure.Test", "Edwin.Infrastructure.Test\Edwin.Infrastructure.Test.csproj", "{6CA1A1B2-D8EE-4726-A7F4-DC30B9D1590F}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Edwin.Services", "Edwin.Services", "{78689760-DA2E-4B58-82EE-CBA84A7FA2B0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Edwin.TestApi", "Edwin.TestApi\Edwin.TestApi.csproj", "{08512761-2B95-4CF5-8514-BB04162703EC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,14 +45,6 @@ Global
 		{CEED49F7-E107-40CE-90F9-749FAB949DFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CEED49F7-E107-40CE-90F9-749FAB949DFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CEED49F7-E107-40CE-90F9-749FAB949DFC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9397B1C3-8E7B-4A8B-AE4F-434105722447}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9397B1C3-8E7B-4A8B-AE4F-434105722447}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9397B1C3-8E7B-4A8B-AE4F-434105722447}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9397B1C3-8E7B-4A8B-AE4F-434105722447}.Release|Any CPU.Build.0 = Release|Any CPU
-		{777AB2ED-5518-40E8-8A14-0A037CF6B5A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{777AB2ED-5518-40E8-8A14-0A037CF6B5A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{777AB2ED-5518-40E8-8A14-0A037CF6B5A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{777AB2ED-5518-40E8-8A14-0A037CF6B5A8}.Release|Any CPU.Build.0 = Release|Any CPU
 		{094DC6C7-75E0-4A09-9DE5-E17D3EECED6B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{094DC6C7-75E0-4A09-9DE5-E17D3EECED6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{094DC6C7-75E0-4A09-9DE5-E17D3EECED6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -63,10 +53,14 @@ Global
 		{B2D5B368-1342-44B2-868D-AB7497DD118C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B2D5B368-1342-44B2-868D-AB7497DD118C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B2D5B368-1342-44B2-868D-AB7497DD118C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6CA1A1B2-D8EE-4726-A7F4-DC30B9D1590F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6CA1A1B2-D8EE-4726-A7F4-DC30B9D1590F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6CA1A1B2-D8EE-4726-A7F4-DC30B9D1590F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6CA1A1B2-D8EE-4726-A7F4-DC30B9D1590F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{060AD104-0B17-4C82-9EBF-B143DD9DE25A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{060AD104-0B17-4C82-9EBF-B143DD9DE25A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{060AD104-0B17-4C82-9EBF-B143DD9DE25A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{060AD104-0B17-4C82-9EBF-B143DD9DE25A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08512761-2B95-4CF5-8514-BB04162703EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08512761-2B95-4CF5-8514-BB04162703EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08512761-2B95-4CF5-8514-BB04162703EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08512761-2B95-4CF5-8514-BB04162703EC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -76,11 +70,10 @@ Global
 		{A59010EF-8C3E-4D3D-8DC9-4F9795C1302D} = {BE0906B8-7A22-4561-977D-137F5EF3A999}
 		{5C49D37C-3963-4850-97E8-C7860908D58A} = {BE0906B8-7A22-4561-977D-137F5EF3A999}
 		{CEED49F7-E107-40CE-90F9-749FAB949DFC} = {BE0906B8-7A22-4561-977D-137F5EF3A999}
-		{9397B1C3-8E7B-4A8B-AE4F-434105722447} = {BE0906B8-7A22-4561-977D-137F5EF3A999}
-		{777AB2ED-5518-40E8-8A14-0A037CF6B5A8} = {BE0906B8-7A22-4561-977D-137F5EF3A999}
 		{094DC6C7-75E0-4A09-9DE5-E17D3EECED6B} = {BE0906B8-7A22-4561-977D-137F5EF3A999}
 		{B2D5B368-1342-44B2-868D-AB7497DD118C} = {BE0906B8-7A22-4561-977D-137F5EF3A999}
-		{6CA1A1B2-D8EE-4726-A7F4-DC30B9D1590F} = {3E3BC046-1DA6-4E70-807A-68F9B4EB030B}
+		{060AD104-0B17-4C82-9EBF-B143DD9DE25A} = {BE0906B8-7A22-4561-977D-137F5EF3A999}
+		{08512761-2B95-4CF5-8514-BB04162703EC} = {78689760-DA2E-4B58-82EE-CBA84A7FA2B0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {87909587-EF9A-437F-B661-05F7A416555C}

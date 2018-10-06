@@ -1,9 +1,0 @@
-D:\Repos\train\BingoCore.Infrastructure.TagHelpers\bin\Debug\netcoreapp1.1\BingoCore.Infrastructure.TagHelpers.deps.json
-D:\Repos\train\BingoCore.Infrastructure.TagHelpers\bin\Debug\netcoreapp1.1\BingoCore.Infrastructure.TagHelpers.dll
-D:\Repos\train\BingoCore.Infrastructure.TagHelpers\bin\Debug\netcoreapp1.1\BingoCore.Infrastructure.TagHelpers.pdb
-D:\Repos\train\BingoCore.Infrastructure.TagHelpers\obj\Debug\netcoreapp1.1\BingoCore.Infrastructure.TagHelpers.csprojResolveAssemblyReference.cache
-D:\Repos\train\BingoCore.Infrastructure.TagHelpers\obj\Debug\netcoreapp1.1\BingoCore.Infrastructure.TagHelpers.csproj.CoreCompileInputs.cache
-D:\Repos\train\BingoCore.Infrastructure.TagHelpers\obj\Debug\netcoreapp1.1\BingoCore.Infrastructure.TagHelpers.AssemblyInfoInputs.cache
-D:\Repos\train\BingoCore.Infrastructure.TagHelpers\obj\Debug\netcoreapp1.1\BingoCore.Infrastructure.TagHelpers.AssemblyInfo.cs
-D:\Repos\train\BingoCore.Infrastructure.TagHelpers\obj\Debug\netcoreapp1.1\BingoCore.Infrastructure.TagHelpers.dll
-D:\Repos\train\BingoCore.Infrastructure.TagHelpers\obj\Debug\netcoreapp1.1\BingoCore.Infrastructure.TagHelpers.pdb

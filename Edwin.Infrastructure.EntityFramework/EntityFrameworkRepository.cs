@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Edwin.Infrastructure.EntityFramework
 {
-    public class EntityFrameworkRepository<TContext, TEntity, TIdentify> : IEntityRepository<TEntity, TIdentify>
+    public class EntityFrameworkRepository<TContext, TEntity, TIdentify> : IRepository<TEntity, TIdentify>
         where TEntity : class, IAggregateRoot, IEntity<TIdentify>
         where TContext : DbContext
     {
@@ -23,6 +23,11 @@ namespace Edwin.Infrastructure.EntityFramework
         }
 
         #region Queries
+        public IQueryable<TEntity> FindAllBySQL(string sqlString, params object[] parameters)
+        {
+            return _store.FromSql(sqlString, parameters);
+        }
+
         public IQueryable<TEntity> FindAll() => _store;
 
         public IQueryable<TEntity> FindAll(Expression<Func<TEntity, bool>> where = null) => _store.Where(where);
@@ -59,12 +64,16 @@ namespace Edwin.Infrastructure.EntityFramework
         #region Add
         public TEntity Add(TEntity entity)
         {
-            return _context.Add(entity).Entity;
+            var result = _context.Add(entity).Entity;
+            _context.SaveChanges();
+            return result;
         }
 
         public async Task<TEntity> AddAsync(TEntity entity)
         {
-            return (await _context.AddAsync(entity)).Entity;
+            var result = (await _context.AddAsync(entity)).Entity;
+            await _context.SaveChangesAsync();
+            return result;
         }
         #endregion
 
@@ -72,13 +81,15 @@ namespace Edwin.Infrastructure.EntityFramework
         public void Update(TEntity entity)
         {
             _context.Update(entity);
+            _context.SaveChanges();
         }
 
-        public async Task UpdateAsync(TEntity entity)
+        public Task UpdateAsync(TEntity entity)
         {
-            await Task.Run(() =>
+            return Task.Run(() =>
             {
                 _context.Update(entity);
+                _context.SaveChanges();
             });
         }
 
@@ -87,6 +98,7 @@ namespace Edwin.Infrastructure.EntityFramework
             var entity = FindById(identify);
             action.Invoke(entity);
             _context.Update(entity);
+            _context.SaveChanges();
         }
 
         public async Task UpdateByIdAsync(TIdentify identify, Action<TEntity> action)
@@ -94,6 +106,7 @@ namespace Edwin.Infrastructure.EntityFramework
             var entity = await FindByIdAsync(identify);
             action.Invoke(entity);
             _context.Update(entity);
+            _context.SaveChanges();
         }
         #endregion
 
@@ -101,11 +114,13 @@ namespace Edwin.Infrastructure.EntityFramework
         public void Remove(Expression<Func<TEntity, bool>> where = null)
         {
             _context.RemoveRange(_store.Where(where));
+            _context.SaveChanges();
         }
 
         public void Remove(TEntity entity)
         {
             _context.Remove(entity);
+            _context.SaveChanges();
         }
 
         public async Task RemoveAsync(TEntity entity)
@@ -113,7 +128,8 @@ namespace Edwin.Infrastructure.EntityFramework
             await Task.Run(() =>
             {
                 _context.Remove(entity);
-            });       
+                _context.SaveChanges();
+            });
         }
 
         public async Task RemoveAsync(Expression<Func<TEntity, bool>> where)
@@ -121,17 +137,20 @@ namespace Edwin.Infrastructure.EntityFramework
             await Task.Run(() =>
             {
                 _context.RemoveRange(_store.Where(where));
+                _context.SaveChanges();
             });
         }
 
         public void RemoveById(TIdentify identify)
         {
             _context.Remove(FindById(identify));
+            _context.SaveChanges();
         }
 
         public async Task RemoveByIdAsync(TIdentify identify)
         {
             _context.Remove(await FindByIdAsync(identify));
+            _context.SaveChanges();
         }
         #endregion
     }

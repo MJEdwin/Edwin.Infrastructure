@@ -12,3 +12,12 @@ D:\Repos\NetSwagger\Edwin.Infrastructure\Edwin.Infrastructure.Core\obj\Debug\net
 D:\Repos\NetSwagger\Edwin.Infrastructure\Edwin.Infrastructure.Core\obj\Debug\netstandard2.0\Edwin.Infrastructure.Core.dll
 D:\Repos\NetSwagger\Edwin.Infrastructure\Edwin.Infrastructure.Core\obj\Debug\netstandard2.0\Edwin.Infrastructure.Core.pdb
 D:\Repos\NetSwagger\Edwin.Infrastructure\Edwin.Infrastructure.Core\obj\Debug\netstandard2.0\Edwin.Infrastructure.Core.csproj.CopyComplete
+D:\Repos\git\Edwin.Infrastructure\Edwin.Infrastructure.Core\bin\Debug\netstandard2.0\Edwin.Infrastructure.Core.deps.json
+D:\Repos\git\Edwin.Infrastructure\Edwin.Infrastructure.Core\bin\Debug\netstandard2.0\Edwin.Infrastructure.Core.dll
+D:\Repos\git\Edwin.Infrastructure\Edwin.Infrastructure.Core\obj\Debug\netstandard2.0\Edwin.Infrastructure.Core.csprojAssemblyReference.cache
+D:\Repos\git\Edwin.Infrastructure\Edwin.Infrastructure.Core\obj\Debug\netstandard2.0\Edwin.Infrastructure.Core.csproj.CoreCompileInputs.cache
+D:\Repos\git\Edwin.Infrastructure\Edwin.Infrastructure.Core\obj\Debug\netstandard2.0\Edwin.Infrastructure.Core.AssemblyInfoInputs.cache
+D:\Repos\git\Edwin.Infrastructure\Edwin.Infrastructure.Core\obj\Debug\netstandard2.0\Edwin.Infrastructure.Core.AssemblyInfo.cs
+D:\Repos\git\Edwin.Infrastructure\Edwin.Infrastructure.Core\bin\Debug\netstandard2.0\Edwin.Infrastructure.Core.pdb
+D:\Repos\git\Edwin.Infrastructure\Edwin.Infrastructure.Core\obj\Debug\netstandard2.0\Edwin.Infrastructure.Core.dll
+D:\Repos\git\Edwin.Infrastructure\Edwin.Infrastructure.Core\obj\Debug\netstandard2.0\Edwin.Infrastructure.Core.pdb

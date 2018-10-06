@@ -10,3 +10,15 @@ D:\Repos\NetSwagger\Edwin.Infrastructure\Edwin.Infrastructure.AutoMapper\obj\Deb
 D:\Repos\NetSwagger\Edwin.Infrastructure\Edwin.Infrastructure.AutoMapper\obj\Debug\netstandard2.0\Edwin.Infrastructure.AutoMapper.dll
 D:\Repos\NetSwagger\Edwin.Infrastructure\Edwin.Infrastructure.AutoMapper\obj\Debug\netstandard2.0\Edwin.Infrastructure.AutoMapper.pdb
 D:\Repos\NetSwagger\Edwin.Infrastructure\Edwin.Infrastructure.AutoMapper\obj\Debug\netstandard2.0\Edwin.Infrastructure.AutoMapper.csproj.CopyComplete
+D:\Repos\git\Edwin.Infrastructure\Edwin.Infrastructure.AutoMapper\bin\Debug\netstandard2.0\Edwin.Infrastructure.AutoMapper.deps.json
+D:\Repos\git\Edwin.Infrastructure\Edwin.Infrastructure.AutoMapper\bin\Debug\netstandard2.0\Edwin.Infrastructure.AutoMapper.dll
+D:\Repos\git\Edwin.Infrastructure\Edwin.Infrastructure.AutoMapper\bin\Debug\netstandard2.0\Edwin.Infrastructure.AutoMapper.pdb
+D:\Repos\git\Edwin.Infrastructure\Edwin.Infrastructure.AutoMapper\bin\Debug\netstandard2.0\Edwin.Infrastructure.Reflection.dll
+D:\Repos\git\Edwin.Infrastructure\Edwin.Infrastructure.AutoMapper\bin\Debug\netstandard2.0\Edwin.Infrastructure.Reflection.pdb
+D:\Repos\git\Edwin.Infrastructure\Edwin.Infrastructure.AutoMapper\obj\Debug\netstandard2.0\Edwin.Infrastructure.AutoMapper.csprojAssemblyReference.cache
+D:\Repos\git\Edwin.Infrastructure\Edwin.Infrastructure.AutoMapper\obj\Debug\netstandard2.0\Edwin.Infrastructure.AutoMapper.csproj.CoreCompileInputs.cache
+D:\Repos\git\Edwin.Infrastructure\Edwin.Infrastructure.AutoMapper\obj\Debug\netstandard2.0\Edwin.Infrastructure.AutoMapper.AssemblyInfoInputs.cache
+D:\Repos\git\Edwin.Infrastructure\Edwin.Infrastructure.AutoMapper\obj\Debug\netstandard2.0\Edwin.Infrastructure.AutoMapper.AssemblyInfo.cs
+D:\Repos\git\Edwin.Infrastructure\Edwin.Infrastructure.AutoMapper\obj\Debug\netstandard2.0\Edwin.Infrastructure.AutoMapper.csproj.CopyComplete
+D:\Repos\git\Edwin.Infrastructure\Edwin.Infrastructure.AutoMapper\obj\Debug\netstandard2.0\Edwin.Infrastructure.AutoMapper.dll
+D:\Repos\git\Edwin.Infrastructure\Edwin.Infrastructure.AutoMapper\obj\Debug\netstandard2.0\Edwin.Infrastructure.AutoMapper.pdb

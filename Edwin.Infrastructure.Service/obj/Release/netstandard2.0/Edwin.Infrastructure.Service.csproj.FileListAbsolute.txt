@@ -1,9 +1,0 @@
-D:\Repos\NetSwagger\Edwin.Infrastructure\Edwin.Infrastructure.Service\bin\Release\netstandard2.0\Edwin.Infrastructure.Service.deps.json
-D:\Repos\NetSwagger\Edwin.Infrastructure\Edwin.Infrastructure.Service\bin\Release\netstandard2.0\Edwin.Infrastructure.Service.dll
-D:\Repos\NetSwagger\Edwin.Infrastructure\Edwin.Infrastructure.Service\bin\Release\netstandard2.0\Edwin.Infrastructure.Service.pdb
-D:\Repos\NetSwagger\Edwin.Infrastructure\Edwin.Infrastructure.Service\obj\Release\netstandard2.0\Edwin.Infrastructure.Service.csprojResolveAssemblyReference.cache
-D:\Repos\NetSwagger\Edwin.Infrastructure\Edwin.Infrastructure.Service\obj\Release\netstandard2.0\Edwin.Infrastructure.Service.csproj.CoreCompileInputs.cache
-D:\Repos\NetSwagger\Edwin.Infrastructure\Edwin.Infrastructure.Service\obj\Release\netstandard2.0\Edwin.Infrastructure.Service.AssemblyInfoInputs.cache
-D:\Repos\NetSwagger\Edwin.Infrastructure\Edwin.Infrastructure.Service\obj\Release\netstandard2.0\Edwin.Infrastructure.Service.AssemblyInfo.cs
-D:\Repos\NetSwagger\Edwin.Infrastructure\Edwin.Infrastructure.Service\obj\Release\netstandard2.0\Edwin.Infrastructure.Service.dll
-D:\Repos\NetSwagger\Edwin.Infrastructure\Edwin.Infrastructure.Service\obj\Release\netstandard2.0\Edwin.Infrastructure.Service.pdb
