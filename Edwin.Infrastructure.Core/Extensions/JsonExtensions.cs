@@ -8,7 +8,7 @@ namespace Edwin.Infrastructure.Extensions
 {
     public static class JsonExtensions
     {
-        public static string ToJsonString(this object @object)
+        public static string ToJson(this object @object)
         {
             return JsonConvert.SerializeObject(@object);
         }

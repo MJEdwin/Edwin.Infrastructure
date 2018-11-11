@@ -9,7 +9,6 @@ using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
-using Autofac.Extensions.DependencyInjection;
 
 namespace Edwin.TestApi
 {
@@ -26,7 +25,6 @@ namespace Edwin.TestApi
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
                 .UseKestrel()
-                .ConfigureServices(s=>s.AddAutofac())
                 .UseStartup<Startup>();
     }
 }

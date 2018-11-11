@@ -1,5 +1,4 @@
-﻿using Autofac.Extras.DynamicProxy;
-using Edwin.TestApi.Interceptor;
+﻿using Edwin.TestApi.Interceptor;
 using System;
 using System.Collections.Generic;
 using System.Linq;

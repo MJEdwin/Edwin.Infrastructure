@@ -13,13 +13,9 @@ namespace Edwin.Infrastructure.Domain.Event
         where TEventData : IEventData
     {
         /// <summary>
-        /// 设置当前是否为异步事件
-        /// </summary>
-        bool Async { get; }
-        /// <summary>
         /// 事件处理程序
         /// </summary>
         /// <param name="eventData">事件数据</param>
-        void HandlerEvent(TEventData eventData);
+        Task HandlerEventAsync(TEventData eventData);
     }
 }

@@ -7,3 +7,8 @@ D:\Repos\git\Edwin.Infrastructure\Edwin.Infrastructure.Castle\bin\Debug\netstand
 D:\Repos\git\Edwin.Infrastructure\Edwin.Infrastructure.Castle\obj\Debug\netstandard2.0\Edwin.Infrastructure.Castle.csprojAssemblyReference.cache
 D:\Repos\git\Edwin.Infrastructure\Edwin.Infrastructure.Castle\obj\Debug\netstandard2.0\Edwin.Infrastructure.Castle.dll
 D:\Repos\git\Edwin.Infrastructure\Edwin.Infrastructure.Castle\obj\Debug\netstandard2.0\Edwin.Infrastructure.Castle.pdb
+D:\Repos\git\Edwin.Infrastructure\Edwin.Infrastructure.Castle\bin\Debug\netstandard2.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\Repos\git\Edwin.Infrastructure\Edwin.Infrastructure.Castle\bin\Debug\netstandard2.0\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+D:\Repos\git\Edwin.Infrastructure\Edwin.Infrastructure.Castle\obj\Debug\netstandard2.0\Edwin.Infrastructure.Castle.csproj.CopyComplete
+D:\Repos\git\Edwin.Infrastructure\Edwin.Infrastructure.Castle\bin\Debug\netstandard2.0\Edwin.Infrastructure.Core.dll
+D:\Repos\git\Edwin.Infrastructure\Edwin.Infrastructure.Castle\bin\Debug\netstandard2.0\Edwin.Infrastructure.Core.pdb

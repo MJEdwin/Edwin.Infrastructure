@@ -17,11 +17,9 @@ namespace Edwin.Infrastructure.Extensions
             List<byte> readBytes = new List<byte>();
             stream.Position = start;
             long readLength = (end ?? stream.Length) - start;
-            int readByte;
             for (long i = 0; i < readLength; i++)
             {
-                readByte = stream.ReadByte();
-                readBytes.Add(Convert.ToByte(readByte));
+                readBytes.Add(Convert.ToByte(stream.ReadByte()));
             }
             return readBytes.ToArray();
         }

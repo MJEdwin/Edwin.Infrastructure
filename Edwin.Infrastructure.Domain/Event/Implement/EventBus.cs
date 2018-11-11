@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Extensions.DependencyInjection;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
@@ -32,38 +33,20 @@ namespace Edwin.Infrastructure.Domain.Event.Implement
             _eventDictionary[eventData].Add(eventHandler);
         }
 
-        private void DoHandler<TEventData>(IEventHandler<TEventData> handler, TEventData data)
-            where TEventData : IEventData
-        {
-            //根据事件是否异步判断是否需要异步执行
-            if (handler.Async)
-            {
-                Task.Run(() => handler.HandlerEvent(data));
-            }
-            else
-                handler.HandlerEvent(data);
-        }
-
         public void Publish<TEventData>(TEventData data) where TEventData : IEventData
         {
             var findType = typeof(TEventData);
-            foreach (var key in _eventDictionary.Keys)
+            if (_eventDictionary.ContainsKey(findType))
             {
-                //判断是否禁止冒泡
-                if ((data.Inherited ? false : findType.IsSubclassOf(key)) || findType == key)
+                using (var scope = _serviceProvider.CreateScope())
                 {
-                    foreach (Type type in _eventDictionary[key])
+                    List<Task> tasks = new List<Task>();
+                    foreach (var type in _eventDictionary[findType])
                     {
-                        try
-                        {
-                            //依赖注入初始化
-                            DoHandler(_serviceProvider.GetService(type) as IEventHandler<TEventData>, data);
-                        }
-                        catch
-                        {
-                            throw;
-                        }
+                        //依赖注入初始化
+                        tasks.Add(Task.Run(() => (scope.ServiceProvider.GetService(type) as IEventHandler<TEventData>).HandlerEventAsync(data)));
                     }
+                    Task.WaitAll(tasks.ToArray());
                 }
             }
         }

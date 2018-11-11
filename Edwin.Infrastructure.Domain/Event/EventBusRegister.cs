@@ -12,10 +12,10 @@ namespace Edwin.Infrastructure.Domain.Event
         public static IServiceCollection AddEventBus(this IServiceCollection service)
         {
             //获取所有事件处理器，并将所有处理器进行依赖注入
-            var types = TypeFinder.GetTypes(type => type.IsClass && type.GetInterface(typeof(IEventHandler<>).Name) != null);
+            var types = TypeFinder.GetTypes(type => !type.IsAbstract && type.IsClass && type.GetInterface(typeof(IEventHandler<>).Name) != null);
             foreach (var type in types)
             {
-                service.AddSingleton(type);
+                service.AddScoped(type.AsType());
             }
             //注册全球事件总线
             service.AddSingleton<IEventBus, EventBus>(serviceProvider =>

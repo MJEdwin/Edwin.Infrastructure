@@ -14,9 +14,5 @@ namespace Edwin.Infrastructure.Domain.Event
         /// 事件发生
         /// </summary>
         object EventSource { get; set; }
-        /// <summary>
-        /// 是否阻止向子类传递
-        /// </summary>
-        bool Inherited { get; set; }
     }
 }

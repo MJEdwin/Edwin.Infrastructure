@@ -13,7 +13,7 @@ namespace Edwin.Infrastructure.Http.HttpContent
         {
         }
 
-        public JsonContent(object @object, Encoding encoding = null) : this(@object.ToJsonString(), encoding)
+        public JsonContent(object @object, Encoding encoding = null) : this(@object.ToJson(), encoding)
         {
 
         }

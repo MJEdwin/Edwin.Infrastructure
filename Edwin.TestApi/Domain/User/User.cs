@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Edwin.TestApi.Domain.User
 {
-    public class User : IStringEntity,IAggregateRoot
+    public class User : IStringEntity, IAggregateRoot
     {
         public string Id { get; set; }
-        
+
         public string UserName { get; set; }
 
         public string Password { get; set; }
