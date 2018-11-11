@@ -1,5 +1,0 @@
-D:\Repos\NetSwagger\Edwin.Infrastructure.DDD\bin\Debug\netcoreapp2.0\Edwin.Infrastructure.DDD.deps.json
-D:\Repos\NetSwagger\Edwin.Infrastructure.DDD\bin\Debug\netcoreapp2.0\Edwin.Infrastructure.DDD.dll
-D:\Repos\NetSwagger\Edwin.Infrastructure.DDD\obj\Debug\netcoreapp2.0\Edwin.Infrastructure.DDD.csproj.CoreCompileInputs.cache
-D:\Repos\NetSwagger\Edwin.Infrastructure.DDD\obj\Debug\netcoreapp2.0\Edwin.Infrastructure.DDD.AssemblyInfoInputs.cache
-D:\Repos\NetSwagger\Edwin.Infrastructure.DDD\obj\Debug\netcoreapp2.0\Edwin.Infrastructure.DDD.AssemblyInfo.cs

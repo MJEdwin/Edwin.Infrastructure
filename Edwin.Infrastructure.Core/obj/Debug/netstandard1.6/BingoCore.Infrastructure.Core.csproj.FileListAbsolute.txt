@@ -1,9 +1,0 @@
-D:\Repos\train\BingoCore.Infrastructure.Core\bin\Debug\netstandard1.6\BingoCore.Infrastructure.Core.deps.json
-D:\Repos\train\BingoCore.Infrastructure.Core\bin\Debug\netstandard1.6\BingoCore.Infrastructure.Core.dll
-D:\Repos\train\BingoCore.Infrastructure.Core\bin\Debug\netstandard1.6\BingoCore.Infrastructure.Core.pdb
-D:\Repos\train\BingoCore.Infrastructure.Core\obj\Debug\netstandard1.6\BingoCore.Infrastructure.Core.csprojResolveAssemblyReference.cache
-D:\Repos\train\BingoCore.Infrastructure.Core\obj\Debug\netstandard1.6\BingoCore.Infrastructure.Core.csproj.CoreCompileInputs.cache
-D:\Repos\train\BingoCore.Infrastructure.Core\obj\Debug\netstandard1.6\BingoCore.Infrastructure.Core.AssemblyInfoInputs.cache
-D:\Repos\train\BingoCore.Infrastructure.Core\obj\Debug\netstandard1.6\BingoCore.Infrastructure.Core.AssemblyInfo.cs
-D:\Repos\train\BingoCore.Infrastructure.Core\obj\Debug\netstandard1.6\BingoCore.Infrastructure.Core.dll
-D:\Repos\train\BingoCore.Infrastructure.Core\obj\Debug\netstandard1.6\BingoCore.Infrastructure.Core.pdb
