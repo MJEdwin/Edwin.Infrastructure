@@ -18,8 +18,8 @@ namespace Edwin.Infrastructure.EntityFramework
         {
             var type = repository;
             //对EntityFrameworkRepository<,,>进行emit编织
-            var asmBuilder = AssemblyBuilder.DefineDynamicAssembly(new AssemblyName("ORM"), AssemblyBuilderAccess.Run);
-            var moduleBuilder = asmBuilder.DefineDynamicModule("ORM");
+            var asmBuilder = AssemblyBuilder.DefineDynamicAssembly(new AssemblyName("Edwin.Proxy"), AssemblyBuilderAccess.Run);
+            var moduleBuilder = asmBuilder.DefineDynamicModule("Edwin.Proxy");
             //设置类
             var typeBuilder = moduleBuilder.DefineType(type.Name, TypeAttributes.Public | TypeAttributes.Class);
             //设置泛型约束

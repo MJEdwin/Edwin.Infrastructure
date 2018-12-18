@@ -1,5 +1,5 @@
 ﻿using Edwin.Infrastructure.Domain.Event;
-using Edwin.Infrastructure.Domain.Event.Implement;
+using Edwin.Infrastructure.Domain.Event.Impl;
 using Edwin.Infrastructure.Domain.Repositories;
 using Edwin.TestApi.Domain.User;
 using System;

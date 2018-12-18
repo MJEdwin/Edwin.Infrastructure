@@ -17,6 +17,7 @@ namespace Edwin.Infrastructure.Objects
         public static readonly TimeStamp Zero = ReferenceTime;
         public static TimeStamp Now => DateTimeOffset.UtcNow - ReferenceTime;
         public static readonly DateTimeOffset ReferenceTime = new DateTimeOffset(1970, 1, 1, 0, 0, 0, 0, TimeSpan.Zero);
+
         public TimeStamp(long ticks)
         {
             TimeSpan = new TimeSpan(ticks);

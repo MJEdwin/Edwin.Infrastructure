@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Edwin.Infrastructure.Domain.Event;
-using Edwin.Infrastructure.Domain.Event.Implement;
+using Edwin.Infrastructure.Domain.Event.Impl;
 using Edwin.TestApi.Services;
 using Microsoft.AspNetCore.Mvc;
 

@@ -6,10 +6,10 @@ namespace Edwin.Infrastructure.Serializer
 {
     public static class SerializerExtensions
     {
-        public static T Deserialize<T, TDestination>(this ISerializer<TDestination> serializer, TDestination destination)
-            where T : class
-        {
-            return serializer.Deserialize(destination, typeof(T)) as T;
-        }
+        public static ISerializer<TSerializeFrom, TSerializeTo> Append<TSerializeFrom, TMiddleware, TSerializeTo>(this ISerializer<TSerializeFrom, TMiddleware> serializer, ISerializer<TMiddleware, TSerializeTo> next) 
+            => new PipelineSerializer<TSerializeFrom, TMiddleware, TSerializeTo>(serializer, next);
+
+        public static ISerializer<TTo, TFrom> Reverse<TFrom, TTo>(this ISerializer<TFrom, TTo> serializer)
+            => new ReverseSerializer<TTo, TFrom>(serializer);
     }
 }

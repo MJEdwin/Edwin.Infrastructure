@@ -33,7 +33,7 @@ namespace Edwin.Infrastructure.Http.UriExtensions
         public void AddParam(string name, string value)
             => ParamDict.Add(name, value);
 
-        public void DeleteParam(string name)
+        public void RemoveParam(string name)
             => ParamDict.Remove(name);
         /// <summary>
         /// get uri with param
@@ -47,7 +47,7 @@ namespace Edwin.Infrastructure.Http.UriExtensions
         /// </summary>
         /// <returns></returns>
         public override string ToString()
-            => Uri.ToString() + "?" + ParamDict.EncodeAsParam(IsParamEncoded);
+            => Uri.ToString() + "?" + ParamDict.EncodeAsQueryParam(IsParamEncoded);
 
         public static implicit operator UriString(Uri @uri) => new UriString(uri.AbsolutePath, uri.GetQueryParam());
 

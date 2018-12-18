@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Edwin.Infrastructure.Domain.Event.Implement
+namespace Edwin.Infrastructure.Domain.Event.Impl
 {
     /// <summary>
     /// 全球事件总线实现

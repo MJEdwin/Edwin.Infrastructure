@@ -17,12 +17,9 @@ namespace Edwin.Infrastructure.Http.HttpContent
         {
             FileName = fileName;
             Length = fileStream.Length;
-            if (!string.IsNullOrEmpty(mediaType))
-            {
-                ContentType = mediaType;
-            }
+            ContentType = !string.IsNullOrEmpty(mediaType) ? mediaType : "application/octet-stream";
             Headers.ContentType = new MediaTypeHeaderValue(ContentType);
-            Headers.ContentDisposition = Headers.ContentDisposition ?? new ContentDispositionHeaderValue("form-data");
+            Headers.ContentDisposition = Headers.ContentDisposition ?? new ContentDispositionHeaderValue("attachment");
             Headers.ContentDisposition.FileName = "\"" + FileName + "\"";
             Headers.ContentLength = Length;
         }
@@ -31,6 +28,6 @@ namespace Edwin.Infrastructure.Http.HttpContent
 
         public long Length { get; private set; }
 
-        public string ContentType { get; private set; } = "application/octet-stream";
+        public string ContentType { get; private set; }
     }
 }

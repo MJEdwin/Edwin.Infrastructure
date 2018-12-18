@@ -19,7 +19,7 @@ namespace Edwin.Infrastructure.Extensions
             long readLength = (end ?? stream.Length) - start;
             for (long i = 0; i < readLength; i++)
             {
-                readBytes.Add(Convert.ToByte(stream.ReadByte()));
+                readBytes.Add((byte)stream.ReadByte());
             }
             return readBytes.ToArray();
         }
@@ -35,11 +35,7 @@ namespace Edwin.Infrastructure.Extensions
             Guard.ArgumentNotNull(nameof(other), other);
 
             other.Seek(0, SeekOrigin.Begin);
-            int readByte;
-            while ((readByte = other.ReadByte()) != -1)
-            {
-                stream.WriteByte(Convert.ToByte(readByte));
-            }
+            other.CopyTo(stream);
             return stream;
         }
 

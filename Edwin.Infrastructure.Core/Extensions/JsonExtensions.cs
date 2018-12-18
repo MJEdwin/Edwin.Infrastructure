@@ -8,34 +8,16 @@ namespace Edwin.Infrastructure.Extensions
 {
     public static class JsonExtensions
     {
-        public static string ToJson(this object @object)
-        {
-            return JsonConvert.SerializeObject(@object);
-        }
+        public static string ToJson(this object @object) 
+            => JsonConvert.SerializeObject(@object);
 
-        public static T ToObject<T>(this string jsonString)
-        {
-            return JsonConvert.DeserializeObject<T>(jsonString);
-        }
+        public static T ToObject<T>(this string jsonStr) 
+            => JsonConvert.DeserializeObject<T>(jsonStr);
 
-        public static JToken ToJToken(this object @object)
-        {
-            return JToken.FromObject(@object);
-        }
+        public static JToken AsJToken(this object @object) 
+            => JToken.FromObject(@object);
 
-        public static JObject ToJObject(this object @object)
-        {
-            return JObject.FromObject(@object);
-        }
-
-        public static JArray ToJArray(this IEnumerable<object> @array)
-        {
-            return JArray.FromObject(@array);
-        }
-
-        public static JToken ToJToken(this string jsonString)
-        {
-            return JToken.Parse(jsonString);
-        }
+        public static JToken ToJToken(this string jsonStr) 
+            => JToken.Parse(jsonStr);
     }
 }

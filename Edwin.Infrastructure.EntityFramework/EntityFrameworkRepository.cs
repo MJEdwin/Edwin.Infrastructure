@@ -23,11 +23,6 @@ namespace Edwin.Infrastructure.EntityFramework
         }
 
         #region Queries
-        public IQueryable<TEntity> FindAllBySQL(string sqlString, params object[] parameters)
-        {
-            return _store.FromSql(sqlString, parameters);
-        }
-
         public IQueryable<TEntity> FindAll() => _store;
 
         public IQueryable<TEntity> FindAll(Expression<Func<TEntity, bool>> where = null) => _store.Where(where);
@@ -40,13 +35,13 @@ namespace Edwin.Infrastructure.EntityFramework
 
         public Task<TEntity> FindOrDefaultAsync(Expression<Func<TEntity, bool>> where = null) => _store.FirstOrDefaultAsync(where);
 
-        public TEntity FindById(TIdentify identify) => _store.First(entity => entity.Id.Equals(identify));
+        public TEntity FindOrDefaultById(TIdentify identify) => FindOrDefaultById((object)identify);
 
-        public Task<TEntity> FindByIdAsync(TIdentify identify) => _store.FirstAsync(entity => entity.Id.Equals(identify));
+        public Task<TEntity> FindOrDefaultByIdAsync(TIdentify identify) => FindOrDefaultByIdAsync((object)identify);
 
-        public TEntity FindOrDefaultById(TIdentify identify) => _store.FirstOrDefault(entity => entity.Id.Equals(identify));
+        public TEntity FindOrDefaultById(object identify) => _store.Find(identify);
 
-        public Task<TEntity> FindOrDefaultByIdAsync(TIdentify identify) => _store.FirstOrDefaultAsync(entity => entity.Id.Equals(identify));
+        public Task<TEntity> FindOrDefaultByIdAsync(object identify) => _store.FindAsync(identify);
 
         public int Count() => _store.Count();
 
@@ -64,94 +59,84 @@ namespace Edwin.Infrastructure.EntityFramework
         #region Add
         public TEntity Add(TEntity entity)
         {
-            var result = _context.Add(entity).Entity;
+            var result = _store.Add(entity).Entity;
             _context.SaveChanges();
             return result;
         }
 
         public async Task<TEntity> AddAsync(TEntity entity)
         {
-            var result = (await _context.AddAsync(entity)).Entity;
+            var result = (await _store.AddAsync(entity)).Entity;
             await _context.SaveChangesAsync();
             return result;
+        }
+
+        public void AddRange(params TEntity[] entity)
+        {
+            _store.AddRange(entity);
+            _context.SaveChanges();
+        }
+
+        public async Task AddRangeAsync(params TEntity[] entity)
+        {
+            await _store.AddRangeAsync(entity);
+            await _context.SaveChangesAsync();
         }
         #endregion
 
         #region Update
         public void Update(TEntity entity)
         {
-            _context.Update(entity);
+            _store.Update(entity);
             _context.SaveChanges();
         }
 
         public Task UpdateAsync(TEntity entity)
-        {
-            return Task.Run(() =>
-            {
-                _context.Update(entity);
-                _context.SaveChanges();
-            });
-        }
+            => Task.Run(() => Update(entity));
 
         public void UpdateById(TIdentify identify, Action<TEntity> action)
         {
-            var entity = FindById(identify);
-            action.Invoke(entity);
-            _context.Update(entity);
-            _context.SaveChanges();
+            var entity = FindOrDefaultById(identify);
+            if (entity != null)
+            {
+                action.Invoke(entity);
+                _store.Update(entity);
+                _context.SaveChanges();
+            }
         }
 
-        public async Task UpdateByIdAsync(TIdentify identify, Action<TEntity> action)
-        {
-            var entity = await FindByIdAsync(identify);
-            action.Invoke(entity);
-            _context.Update(entity);
-            _context.SaveChanges();
-        }
+        public Task UpdateByIdAsync(TIdentify identify, Action<TEntity> action)
+            => Task.Run(() => UpdateById(identify, action));
         #endregion
 
         #region Remove
         public void Remove(Expression<Func<TEntity, bool>> where = null)
         {
-            _context.RemoveRange(_store.Where(where));
+            _store.RemoveRange(_store.Where(where));
             _context.SaveChanges();
         }
+
+        public Task RemoveAsync(Expression<Func<TEntity, bool>> where)
+            => Task.Run(() => Remove(where));
 
         public void Remove(TEntity entity)
         {
-            _context.Remove(entity);
+            _store.Remove(entity);
             _context.SaveChanges();
         }
 
-        public async Task RemoveAsync(TEntity entity)
-        {
-            await Task.Run(() =>
-            {
-                _context.Remove(entity);
-                _context.SaveChanges();
-            });
-        }
-
-        public async Task RemoveAsync(Expression<Func<TEntity, bool>> where)
-        {
-            await Task.Run(() =>
-            {
-                _context.RemoveRange(_store.Where(where));
-                _context.SaveChanges();
-            });
-        }
+        public Task RemoveAsync(TEntity entity)
+            => Task.Run(() => Remove(entity));
 
         public void RemoveById(TIdentify identify)
         {
-            _context.Remove(FindById(identify));
-            _context.SaveChanges();
+            var entity = FindOrDefaultById(identify);
+            if (entity != null)
+                Remove(entity);
         }
 
-        public async Task RemoveByIdAsync(TIdentify identify)
-        {
-            _context.Remove(await FindByIdAsync(identify));
-            _context.SaveChanges();
-        }
+        public Task RemoveByIdAsync(TIdentify identify)
+            => Task.Run(() => RemoveById(identify));
         #endregion
     }
 }

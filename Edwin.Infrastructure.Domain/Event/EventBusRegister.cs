@@ -1,4 +1,4 @@
-﻿using Edwin.Infrastructure.Domain.Event.Implement;
+﻿using Edwin.Infrastructure.Domain.Event.Impl;
 using Edwin.Infrastructure.Reflection;
 using Microsoft.Extensions.DependencyInjection;
 using System;

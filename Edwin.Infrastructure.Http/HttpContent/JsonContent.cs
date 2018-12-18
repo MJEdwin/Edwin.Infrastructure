@@ -9,7 +9,7 @@ namespace Edwin.Infrastructure.Http.HttpContent
 {
     public class JsonContent : StringContent
     {
-        public JsonContent(string jsonString, Encoding encoding = null) : base(jsonString, encoding ?? Encoding.UTF8, "application/json")
+        public JsonContent(string jsonStr, Encoding encoding = null) : base(jsonStr, encoding ?? Encoding.UTF8, "application/json")
         {
         }
 
